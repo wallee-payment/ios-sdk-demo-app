@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct OnlineStoreApp: App {
     @EnvironmentObject var cartManager: CartManager
+    @EnvironmentObject var launchViewManager: LaunchViewManager
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(CartManager())
+                ContentView().environmentObject(CartManager()).environmentObject(LaunchViewManager())
         }
     }
 }
