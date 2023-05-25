@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-resources.sh
-${PODS_CONFIGURATION_BUILD_DIR}/WalleePayment/WalleePayment.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/WalleePaymentSdk/WalleePayment.bundle

@@ -17,7 +17,7 @@ struct LaunchView: View {
             Image("wallee-logo")
                 .resizable()
                 .scaledToFit()
-                .padding(.horizontal)
+                .padding(.horizontal, 50)
         }
         .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {

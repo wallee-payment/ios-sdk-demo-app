@@ -10,6 +10,7 @@ import WalleePaymentSdk
 
 struct ShoppingCartView: View {
     @EnvironmentObject var cartManager: CartManager
+    @StateObject private var paymentManager = PaymentManager()
     
     var body: some View {
         ZStack {
@@ -36,7 +37,7 @@ struct ShoppingCartView: View {
                 }.padding()
                 
                 ScrollView {
-                    VStack {
+                    VStack {                
                         if cartManager.products.count > 0 {
                             VStack {
                                 ForEach (cartManager.products) {
@@ -51,15 +52,14 @@ struct ShoppingCartView: View {
                     }
                 }
                     Button {
-                            //let wallee = WalleePaymentSdk(eventObserver: self as! WalleePaymentResultObserver)
-                            //  changeWalleeColorSchema(wallee: wallee)
-                            //wallee.launchPayment(token: "", rootController: self as! UIViewController)
+                        paymentManager.onOpenSdkPress()
                     } label: {
                         Text("Checkout")
                             .bold()
                             .frame(maxWidth: .infinity)
                             .padding([.top, .bottom], 5)
                     }
+                    .presentModalView(item: $paymentManager.presentedModal, token: $paymentManager.token)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle(radius: 0.0))
                     .padding()
