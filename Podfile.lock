@@ -1,22 +1,16 @@
 PODS:
-  - WalleePayment (3.0.0)
+  - WalleePaymentSdk (1.1.1)
 
 DEPENDENCIES:
-  - WalleePayment (from `https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk.git`, tag `0.1.0`)
+  - WalleePaymentSdk (= 1.1.1)
 
-EXTERNAL SOURCES:
-  WalleePayment:
-    :git: https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk.git
-    :tag: 0.1.0
-
-CHECKOUT OPTIONS:
-  WalleePayment:
-    :git: https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk.git
-    :tag: 0.1.0
+SPEC REPOS:
+  https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-spec.git:
+    - WalleePaymentSdk
 
 SPEC CHECKSUMS:
-  WalleePayment: 8ea5c2000cb2b236ad489d69ff56589797e02c63
+  WalleePaymentSdk: 67cbaebc2a1aa60a05576829c5c27c7245d78059
 
-PODFILE CHECKSUM: a4af54cc4349c0b93657a8e32878d70eaa202e74
+PODFILE CHECKSUM: 652f4ad08c52ad9094ee93bc373c2ad5068cb758
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
