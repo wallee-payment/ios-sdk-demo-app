@@ -58,6 +58,7 @@ struct ShoppingCartView: View {
                             .bold()
                             .frame(maxWidth: .infinity)
                             .padding([.top, .bottom], 5)
+                            .foregroundColor(Color.theme.background)
                     }
                     .presentModalView(item: $paymentManager.presentedModal, token: $paymentManager.token)
                     .buttonStyle(.borderedProminent)

@@ -13,7 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var launchViewManager: LaunchViewManager
     
     init() {
-           UITabBar.appearance().barTintColor = UIColor(Color.theme.background)
+        UITabBar.appearance().barTintColor = UIColor(Color.theme.background)
        }
 
     var body: some View {
@@ -33,6 +33,11 @@ struct ContentView: View {
                             .environment(\.symbolVariants, .none)
                     }
                     .badge(cartManager.totalAmount > 0 ? String(cartManager.totalAmount) : nil)
+                
+                SettingsView()
+                    .tabItem {
+                        Label("", systemImage: "gearshape")
+                    }
             }
         }
     }
