@@ -38,6 +38,11 @@ struct ContentView: View {
                     .tabItem {
                         Label("", systemImage: "gearshape")
                     }
+            }.onAppear{
+                // MOVE ME TO DIFFERENT PLACE!!!
+                UserDefaults.standard.set("36329", forKey: "spaceId")
+                UserDefaults.standard.set("71232", forKey: "userId")
+                UserDefaults.standard.set("MDc1ptkXkDGybujbSRSIUUHJ75jgoEjo4uUqrl05vyA=", forKey: "userToken")
             }
         }
     }

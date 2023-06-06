@@ -10,6 +10,9 @@ import SwiftUI
 struct SettingsView: View {
     @State private var isShowingDetailView = true
     @State private var isDarkMode = false
+    @AppStorage("spaceId") private var spaceId = "36329"
+    @AppStorage("userId") private var applicationId = "71232"
+    @AppStorage("accountToken") private var userToken = "MDc1ptkXkDGybujbSRSIUUHJ75jgoEjo4uUqrl05vyA="
     
     var body: some View {
         NavigationView {
