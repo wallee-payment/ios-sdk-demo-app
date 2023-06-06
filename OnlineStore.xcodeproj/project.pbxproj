@@ -28,8 +28,10 @@
 		7995B6BC2A1F96750009167A /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7995B6BB2A1F96750009167A /* UserDetailsView.swift */; };
 		79AC31C529BA0BF000A7B957 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC31C429BA0BF000A7B957 /* ContentView.swift */; };
 		79B51E5229BA34BD00405046 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B51E5129BA34BD00405046 /* CartManager.swift */; };
+		79C7066B2A2E42640060E8C5 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C7066A2A2E42640060E8C5 /* Extentions.swift */; };
 		79D488DA29C301E2004F2AE1 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D488D929C301E2004F2AE1 /* CartItem.swift */; };
 		79DBF1F329B1E77B003C8D0C /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */; };
+		79F4C0982A27533A002BBD44 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4C0972A27533A002BBD44 /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,7 @@
 		7995B6BB2A1F96750009167A /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		79AC31C429BA0BF000A7B957 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79B51E5129BA34BD00405046 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		79C7066A2A2E42640060E8C5 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		79D488D929C301E2004F2AE1 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		79F4C0972A27533A002BBD44 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				7922362229B6A0E1004DEA8C /* Constants.swift */,
+				79C7066A2A2E42640060E8C5 /* Extentions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -413,6 +417,7 @@
 				7900210929AF7C4200DCE75B /* Product.swift in Sources */,
 				7922362629B6AD65004DEA8C /* Color.swift in Sources */,
 				7900210D29AF8ADB00DCE75B /* ProductDetailView.swift in Sources */,
+				79C7066B2A2E42640060E8C5 /* Extentions.swift in Sources */,
 				79AC31C529BA0BF000A7B957 /* ContentView.swift in Sources */,
 				7922363829B72F90004DEA8C /* ShoppingCartView.swift in Sources */,
 				7922362329B6A0E1004DEA8C /* Constants.swift in Sources */,

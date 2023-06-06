@@ -52,7 +52,7 @@ struct ShoppingCartView: View {
                     }
                 }
                     Button {
-                        paymentManager.onOpenSdkPress()
+                        paymentManager.onOpenSdkPress(cartProducts: cartManager.products)
                     } label: {
                         Text("Checkout")
                             .bold()
@@ -62,6 +62,7 @@ struct ShoppingCartView: View {
                     }
                     .presentModalView(item: $paymentManager.presentedModal, token: $paymentManager.token)
                     .buttonStyle(.borderedProminent)
+                    .disabled(cartManager.products.count <= 0)
                     .buttonBorderShape(.roundedRectangle(radius: 0.0))
                     .padding()
             }

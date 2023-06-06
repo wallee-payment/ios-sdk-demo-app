@@ -8,150 +8,157 @@
 import Foundation
 import UIKit
 import WalleePaymentSdk
+import CryptoKit
 
 class PaymentManager: ObservableObject, WalleePaymentResultObserver {
 
+    let spaceId = UserDefaults.standard.string(forKey: "spaceId") ?? ""
+    let userId = UserDefaults.standard.string(forKey: "userId") ?? ""
+    let userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""
+    
     @Published var token: String = ""
-    @Published var tokenType = "Simple Token"
-    @Published var accountTypeName = "33255 (Lukas)"
+    @Published var transactionData = Data()
     @Published var resultCallback = "============"
     @Published var presentedModal: Bool = false
     
-    var _accountType = "33255"
-    
     func paymentResult(paymentResultMessage: PaymentResult) {
         print("OBSERVER RESULT - SUCCESS CODE: ", paymentResultMessage.code, " MESSAGE: ")
-        var colorCodeMap = [PaymentResultEnum.FAILED: UIColor.red, PaymentResultEnum.COMPLETED: UIColor.green, PaymentResultEnum.CANCELED: UIColor.orange]
 
         DispatchQueue.main.async {
             self.presentedModal = false
             self.resultCallback = paymentResultMessage.code.rawValue
         }
     }
-
-    func onOpenSdkPress(){
-        self.fetchToken(onComplete: { fetchedToken in
-            self.token = fetchedToken
-            self.presentedModal = true
-            let wallee = WalleePaymentSdk(eventObserver: self)
-            self.changeWalleeColorSchema(wallee: wallee)
-        })
-    }
-
-    @IBAction func clearTypeLabel(){
-        resultCallback = "============"
-    }
-
-    private func changeWalleeColorSchema(wallee: WalleePaymentSdk) {
-               let themeProvider = ThemeProvider()
-        //        wallee.setLightTheme(light: themeProvider.getNewLightTheme())
-        //        wallee.setDarkTheme(dark: themeProvider.getNewDarkTheme())
-//        wallee.setCustomTheme(custom: themeProvider.getNewCustomTheme(), baseTheme: .DARK)
-//        wallee.setLightTheme(light: themeProvider.getIncompleteLightTheme())
-//        wallee.setDarkTheme(dark: themeProvider.getIncompleteDarkTheme())
-//        wallee.setCustomTheme(custom: themeProvider.getIncompleteCustomTheme(), baseTheme: .DARK)
-//        wallee.setCustomTheme(custom: nil, baseTheme: .LIGHT)
-    }
     
-    func addTokenManuallyClickSwiftUI(value: String){
-        token =  value
-    }
+    func createTransaction(cartProducts: [CartItem], completion: @escaping(_ success: Bool) -> Void) {
+        // prepare url
+        let baseUrlString = "https://app-wallee.com/api/transaction/create"
+        let url = URL(string: "\(baseUrlString)?spaceId=\(String(describing: spaceId))")
+        guard let requestUrl = url else { fatalError() }
 
-    func fetchToken(onComplete: @escaping (String) -> Void){
-            guard let url = URL(string: getTokenUrl()) else{
-                return
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
+        
+        // headers
+        let jwt = prepareJWT(path: "/api/transaction/create?spaceId=\(String(describing: spaceId))")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(jwt)", forHTTPHeaderField: "Authorization")
+        
+        // payload
+        let listItems = cartProducts.map { item in
+                TransactionListItem(amountIncludingTax: item.count * item.product.price, name: item.product.name, quantity: item.count, type: "SHIPPING")
             }
+        let requestData = Transaction(
+            currency: cartProducts[0].product.currency,
+            lineItems: listItems
+        )
+        let jsonData = try? JSONEncoder().encode(requestData)
 
+        request.httpBody = jsonData
 
-            let task = URLSession.shared.dataTask(with: url){
-                data, response, error in
-
-                if let data = data, let token = String(data: data, encoding: .utf8){
-                    DispatchQueue.main.async {
-                        self.token = token
-                        onComplete(token)
-                    }
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            
+            if let data = data {
+                do {
+                    let res = try JSONDecoder().decode(TransactionResponse.self, from: data)
+                    self.fetchTransactionToken(transactionId: res.id)
+                } catch let error {
+                    print(">>>>")
+                    print(error)
                 }
             }
-
-            task.resume()
         }
-
-
-    func getTokenUrl() -> String{
-        var spaceId = ""
-        if(_accountType != "33255"){
-            spaceId = "?spaceid=" + _accountType
-        }
-
-        switch(tokenType) {
-        case "Simple Token":
-            return "https://dev.customweb.com/schurter/mobile-sdk/create.php"+spaceId //NOTE LSA: original endpoint for creating transactions
-        case "New Customer":
-            return "https://dev.customweb.com/schurter/mobile-sdk/new-customer.php"+spaceId //NOTE LSA: creates a transaction with customerId set to a new value, so the checkbox to store the token will show up on the payment form, but no existing tokens.
-
-        case "Existing Customer":
-            return "https://dev.customweb.com/schurter/mobile-sdk/existing-customer.php"+spaceId // NOTE LSA: creates a transaction with customerId  set to 123customerid456 (an existing customer), so the existing tokens will be listed on the payment form.
-        case "Active Token":
-            return "https://dev.customweb.com/schurter/mobile-sdk/active-token.php"+spaceId // NOTE LSA: creates a transaction with token set to 2786560 (an existing token), so the active token screen will be displayed.
-        default:
-            return "https://dev.customweb.com/schurter/mobile-sdk/create.php"+spaceId
-        }
-    }
-
-
-
-    @IBAction func setSimpleToken(){
-        tokenType = "Simple Token"
-    }
-
-    @IBAction func setNewCustomer(){
-        tokenType = "New Customer"
-
-    }
-
-    @IBAction func setExistingCustomer(){
-        tokenType = "Existing Customer"
+        task.resume()
     }
     
-    @IBAction func setActiveToken(){
-        tokenType = "Active Token"
-    }
-
-    @IBAction func setAccountTypeLukasBalcerzak(){
-        accountTypeName = "33955 (Lukas Balcerzak)"
-        _accountType = "33955"
-    }
-
-    @IBAction func setAccountTypeKatja(){
-        accountTypeName = "33958 (Katja)"
-        _accountType = "33958"
-    }
-
-    @IBAction func setAccountTypeLukas(){
-        accountTypeName = "33255 (Lukas)"
-        _accountType = "33255"
-    }
-}
-
-
-
-extension URLSession {
-  func fetchData<T: Decodable>(for url: URL, completion: @escaping (Result<T, Error>) -> Void) {
-    self.dataTask(with: url) { (data, response, error) in
-      if let error = error {
-        completion(.failure(error))
-      }
-
-      if let data = data {
-        do {
-          let object = try JSONDecoder().decode(T.self, from: data)
-          completion(.success(object))
-        } catch let decoderError {
-          completion(.failure(decoderError))
+    func prepareJWT(path: String) -> String {
+        struct Header: Encodable {
+          let typ = "JWT"
+          let alg = "HS256"
+          let ver = 1
         }
-      }
-    }.resume()
-  }
+        
+        struct Payload: Encodable {
+            let sub: String
+            let iat: Int
+            let requestPath: String
+            let requestMethod: String
+            
+            init (path: String) {
+                   self.sub = "71232"
+                   self.iat = Int(Date().timeIntervalSince1970)
+                   self.requestPath = path
+                   self.requestMethod = "POST"
+               }
+           }
+
+        // prepare header
+        let headerJSON = try! JSONEncoder().encode(Header())
+        let headerBase64 = headerJSON.urlSafeBase64EncodedString()
+        
+        // prepare payload
+        let payloadJSON = try! JSONEncoder().encode(Payload(path: path))
+        let payloadBase64 = payloadJSON.urlSafeBase64EncodedString()
+        
+        let token = Data((headerBase64 + "." + payloadBase64).utf8)
+        
+        //prepare signature
+        let userTokenBase64 = Data(base64Encoded: userToken)!
+        let secretKey = SymmetricKey(data: userTokenBase64)
+        let signature = HMAC<SHA256>.authenticationCode(for: token, using: secretKey)
+        let signatureBase64 = Data(signature).urlSafeBase64EncodedString()
+
+        return [headerBase64, payloadBase64, signatureBase64].joined(separator: ".")
+    }
+    
+    func fetchTransactionToken(transactionId: Int) {
+        print(">>>>>this is transaction id ")
+        print(transactionId)
+        
+        // prepare url
+        let baseUrlString = "https://app-wallee.com/api/transaction/createTransactionCredentials"
+        let url = URL(string: "\(baseUrlString)?spaceId=\(String(describing: spaceId))&id=\(String(describing: transactionId))")
+        guard let requestUrl = url else { fatalError() }
+
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
+        
+        // headers
+        let jwt = prepareJWT(path: "/api/transaction/createTransactionCredentials?spaceId=\(String(describing: spaceId))&id=\(String(describing: transactionId))")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(jwt)", forHTTPHeaderField: "Authorization")
+        
+        // request
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
+            
+            if let data = data, let response = String(data: data, encoding: .utf8){
+                self.token = response
+                self.presentedModal = true
+            }
+        }
+        task.resume()
+    }
+    
+
+    func onOpenSdkPress(cartProducts: [CartItem]){
+        createTransaction(cartProducts: cartProducts, completion: { (success: Bool) -> Void in
+            
+            // When download completes,control flow goes here.
+            if success {
+                //  print(">>>success")
+                //  print(result)
+                //let model: TransactionResponse = try! JSONDecoder().decode(TransactionResponse.self, from: self.transactionData)
+               // print(model)
+                //self.fetchTransactionToken(transactionId: model.id)
+            } else {
+                //   print(">>>error")
+            }
+        })
+    }
 }
+
 
