@@ -20,7 +20,8 @@ struct ProductDetailView: View {
                     VStack {
                         GeometryReader { image in
                             ImageCarouselView(imgArray: product.images)
-                        }.frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
+                        }.padding()
+                         .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
     
                         HStack {
                             Text("Brand: ")
@@ -44,7 +45,7 @@ struct ProductDetailView: View {
                             Text("Price:   ")
                                 .bold()
                                 .foregroundColor(Color.theme.accent)
-                            Text("\(product.currency) \(product.price)")
+                            Text("\(product.currency) \(String(format: "%.2f", product.price))")
                                 .foregroundColor(Color.theme.accent)
                             Spacer()
                         }.padding(.horizontal)

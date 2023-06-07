@@ -48,7 +48,7 @@ struct CartProductRowView: View {
                             }
                         }
                         Spacer()
-                        Text("CHF \(String(cartItem.product.price))")
+                        Text("CHF \(String(format: "%.2f", cartItem.product.price))")
                     }
                     .padding([.horizontal, .bottom])
                 }

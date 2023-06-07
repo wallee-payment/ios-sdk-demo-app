@@ -47,7 +47,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
         
         // payload
         let listItems = cartProducts.map { item in
-                TransactionListItem(amountIncludingTax: item.count * item.product.price, name: item.product.name, quantity: item.count, type: "SHIPPING")
+            TransactionListItem(amountIncludingTax: Int(Float(item.count) * item.product.price), name: item.product.name, quantity: item.count, type: "SHIPPING")
             }
         let requestData = Transaction(
             currency: cartProducts[0].product.currency,

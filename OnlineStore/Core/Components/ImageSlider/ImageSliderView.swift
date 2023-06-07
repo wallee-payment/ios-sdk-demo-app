@@ -52,15 +52,17 @@ struct ImageCarouselView: View {
                         self.slideGesture = .zero
                     })
                 
-                HStack(spacing: 3) {
-                    ForEach(0..<imgArray.count, id: \.self) { index in
-                        Circle()
-                            .frame(width: index == self.currentIndex ? 10 : 8,
-                                   height: index == self.currentIndex ? 10 : 8)
-                            .foregroundColor(index == self.currentIndex ? Color.blue : .white)
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                            .padding(.bottom, 8)
-                            .animation(.spring())
+                if (imgArray.count > 1) {
+                    HStack(spacing: 3) {
+                        ForEach(0..<imgArray.count, id: \.self) { index in
+                            Circle()
+                                .frame(width: index == self.currentIndex ? 10 : 8,
+                                       height: index == self.currentIndex ? 10 : 8)
+                                .foregroundColor(index == self.currentIndex ? Color.blue : .white)
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                                .padding(.bottom, 8)
+                                .animation(.spring())
+                        }
                     }
                 }
             }

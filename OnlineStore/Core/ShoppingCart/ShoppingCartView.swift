@@ -30,7 +30,7 @@ struct ShoppingCartView: View {
                     HStack {
                         Text("Your cart total is: ")
                         Spacer()
-                        Text("CHF \(cartManager.totalPrice).00")
+                        Text("CHF \(String(format: "%.2f", cartManager.totalPrice))")
                     }
                     .padding()
                     .border(Color.theme.accent, width: 2)

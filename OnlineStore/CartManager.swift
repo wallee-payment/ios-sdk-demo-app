@@ -9,7 +9,7 @@ import Foundation
 
 class CartManager: ObservableObject {
     @Published var products: [CartItem] = []
-    @Published var totalPrice: Int = 0
+    @Published var totalPrice: Float = 0
     @Published var totalAmount: Int = 0
     
     func addProduct(product: Product, amount: Int = 1){
@@ -34,12 +34,12 @@ class CartManager: ObservableObject {
             if item.product.id == product.id {
                 if products[index].count > amount {
                     products[index].count = products[index].count - amount
-                    totalPrice -= product.price * amount
+                    totalPrice -= product.price * Float(amount)
                     totalAmount -= amount
                 } else if products[index].count == amount {
                     products = products.filter { $0.product.id != product.id }
                     totalAmount -= amount
-                    totalPrice -= product.price * amount
+                    totalPrice -= product.price * Float(amount)
                 }
             }
         }
