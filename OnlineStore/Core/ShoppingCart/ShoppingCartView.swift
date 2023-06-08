@@ -7,11 +7,15 @@
 
 import SwiftUI
 import WalleePaymentSdk
+import AlertToast
 
 struct ShoppingCartView: View {
     @EnvironmentObject var cartManager: CartManager
-    @StateObject private var paymentManager = PaymentManager()
-    
+    @StateObject private var paymentManager: PaymentManager = PaymentManager(onPaymentComplete: {
+        print(">>paymentResult")
+        //cartManager.removeAllProducts()
+    })
+
     var body: some View {
         ZStack {
             Color.theme.background.ignoresSafeArea()
@@ -37,7 +41,7 @@ struct ShoppingCartView: View {
                 }.padding()
                 
                 ScrollView {
-                    VStack {                
+                    VStack {
                         if cartManager.products.count > 0 {
                             VStack {
                                 ForEach (cartManager.products) {
@@ -51,22 +55,26 @@ struct ShoppingCartView: View {
                         }
                     }
                 }
-                    Button {
-                        paymentManager.onOpenSdkPress(cartProducts: cartManager.products)
-                    } label: {
-                        Text("Checkout")
-                            .bold()
-                            .frame(maxWidth: .infinity)
-                            .padding([.top, .bottom], 5)
-                            .foregroundColor(Color.theme.background)
-                    }
-                    .presentModalView(item: $paymentManager.presentedModal, token: $paymentManager.token)
-                    .buttonStyle(.borderedProminent)
-                    .disabled(cartManager.products.count <= 0)
-                    .buttonBorderShape(.roundedRectangle(radius: 0.0))
-                    .padding()
+                Button {
+                    paymentManager.onOpenSdkPress(cartProducts: cartManager.products)
+                } label: {
+                    Text("Checkout")
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .padding([.top, .bottom], 5)
+                        .foregroundColor(Color.theme.background)
+                }
+                .presentModalView(item: $paymentManager.presentedModal, token: $paymentManager.token)
+                .buttonStyle(.borderedProminent)
+                .disabled(cartManager.products.count <= 0)
+                .buttonBorderShape(.roundedRectangle(radius: 0.0))
+                .padding()
             }
+            
         }
+        .toast(isPresenting: $paymentManager.showToast){
+            AlertToast(type: $paymentManager.toastType.wrappedValue, style: .style(backgroundColor: Color.theme.shadow)
+            )}
     }
 }
 

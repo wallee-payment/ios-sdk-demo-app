@@ -53,6 +53,7 @@ struct CartProductRowView: View {
                     .padding([.horizontal, .bottom])
                 }
             }.frame(height: 120)
+             .padding([.horizontal])
         }
     }
 }

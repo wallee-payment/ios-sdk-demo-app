@@ -45,6 +45,12 @@ class CartManager: ObservableObject {
         }
        
     }
+    
+    func removeAllProducts() {
+        products = []
+        totalAmount = 0
+        totalPrice = 0
+    }
 }
 
 
