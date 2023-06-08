@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct ProductDetailView: View {
     var product: Product
+    @State var showToast: Bool = false
     @EnvironmentObject var cartManager: CartManager
+    
     
     var body: some View {
         ZStack {
@@ -66,6 +69,10 @@ struct ProductDetailView: View {
                 
                 Button {
                     cartManager.addProduct(product: product)
+                    showToast = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        showToast = false
+                    }
                 } label: {
                     Text("ADD TO CART")
                         .frame(maxWidth: .infinity)
@@ -76,6 +83,9 @@ struct ProductDetailView: View {
                 .border(Color.theme.accent, width: 2)
                 .padding()
             }
+            .toast(isPresenting: $showToast){
+                AlertToast(type: .complete(Color.green), style: .style(backgroundColor: Color.theme.shadow)
+                )}
         }
     }
 }

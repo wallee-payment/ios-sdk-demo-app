@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AlertToast/AlertToast.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/WalleePaymentSdk/WalleePaymentSdk.framework/WalleePaymentSdk

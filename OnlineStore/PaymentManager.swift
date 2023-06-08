@@ -9,45 +9,60 @@ import Foundation
 import UIKit
 import WalleePaymentSdk
 import CryptoKit
+import AlertToast
+import SwiftUI
 
 class PaymentManager: ObservableObject, WalleePaymentResultObserver {
-
+    let baseUrl = "https://app-wallee.com"
     let spaceId = UserDefaults.standard.string(forKey: "spaceId") ?? ""
     let userId = UserDefaults.standard.string(forKey: "userId") ?? ""
     let userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""
+    let cartManager = CartManager()
     
     @Published var token: String = ""
-    @Published var transactionData = Data()
-    @Published var resultCallback = "============"
+    @Published var resultCallback:String = ""
     @Published var presentedModal: Bool = false
+    @Published var showToast: Bool = false
+    @Published var toastType: AlertToast.AlertType = .complete(Color.green)
     
-    func paymentResult(paymentResultMessage: PaymentResult) {
-        print("OBSERVER RESULT - SUCCESS CODE: ", paymentResultMessage.code, " MESSAGE: ")
+    var onPaymentComplete: () -> Void
+    init(onPaymentComplete: @escaping () -> Void) {
+        self.onPaymentComplete = onPaymentComplete
+    }
 
-        DispatchQueue.main.async {
-            self.presentedModal = false
-            self.resultCallback = paymentResultMessage.code.rawValue
+    func paymentResult(paymentResultMessage: PaymentResult) {
+        print("PAYMENT RESULT: ", paymentResultMessage.code)
+        self.presentedModal = false
+        self.showToast = true
+        self.toastType = paymentResultMessage.code == .COMPLETED ? .complete(Color.green) : .error(Color.red)
+        self.resultCallback = paymentResultMessage.code.rawValue
+        
+        if (paymentResultMessage.code == .COMPLETED) {
+            onPaymentComplete()
+        }
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.showToast = false
         }
     }
     
     func createTransaction(cartProducts: [CartItem], completion: @escaping(_ success: Bool) -> Void) {
         // prepare url
-        let baseUrlString = "https://app-wallee.com/api/transaction/create"
-        let url = URL(string: "\(baseUrlString)?spaceId=\(String(describing: spaceId))")
-        guard let requestUrl = url else { fatalError() }
+        let url = "/api/transaction/create?spaceId=\(String(describing: spaceId))"
+        guard let requestUrl = URL(string: "\(baseUrl)\(url)") else { fatalError() }
 
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
         
         // headers
-        let jwt = prepareJWT(path: "/api/transaction/create?spaceId=\(String(describing: spaceId))")
+        let jwt = prepareJWT(path: url)
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         request.addValue("Bearer \(jwt)", forHTTPHeaderField: "Authorization")
         
         // payload
         let listItems = cartProducts.map { item in
-            TransactionListItem(amountIncludingTax: Int(Float(item.count) * item.product.price), name: item.product.name, quantity: item.count, type: "SHIPPING")
+            TransactionListItem(amountIncludingTax: String(format: "%.2f", Float(item.count) * item.product.price), name: item.product.name, quantity: item.count, type: "SHIPPING")
             }
         let requestData = Transaction(
             currency: cartProducts[0].product.currency,
@@ -114,9 +129,6 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     }
     
     func fetchTransactionToken(transactionId: Int) {
-        print(">>>>>this is transaction id ")
-        print(transactionId)
-        
         // prepare url
         let baseUrlString = "https://app-wallee.com/api/transaction/createTransactionCredentials"
         let url = URL(string: "\(baseUrlString)?spaceId=\(String(describing: spaceId))&id=\(String(describing: transactionId))")
@@ -138,6 +150,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
             if let data = data, let response = String(data: data, encoding: .utf8){
                 self.token = response
                 self.presentedModal = true
+                self.showToast = false
             }
         }
         task.resume()
@@ -145,19 +158,15 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     
 
     func onOpenSdkPress(cartProducts: [CartItem]){
-        createTransaction(cartProducts: cartProducts, completion: { (success: Bool) -> Void in
-            
-            // When download completes,control flow goes here.
-            if success {
-                //  print(">>>success")
-                //  print(result)
-                //let model: TransactionResponse = try! JSONDecoder().decode(TransactionResponse.self, from: self.transactionData)
-               // print(model)
-                //self.fetchTransactionToken(transactionId: model.id)
-            } else {
-                //   print(">>>error")
-            }
-        })
+        let wallee = WalleePaymentSdk(eventObserver: self)
+        self.showToast = true
+        self.toastType = .loading
+         createTransaction(cartProducts: cartProducts, completion: { (success: Bool) -> Void in
+        //     if success {
+        //     } else {
+        //        //   print(">>>error")
+        //    }
+       })
     }
 }
 

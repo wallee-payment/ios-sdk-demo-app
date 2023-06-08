@@ -14,7 +14,7 @@ struct Transaction: Codable {
 
 struct TransactionListItem: Codable {
     var uniqueId = UUID()
-    var amountIncludingTax: Int
+    var amountIncludingTax: String
     var name: String
     var quantity: Int
     var type: String
