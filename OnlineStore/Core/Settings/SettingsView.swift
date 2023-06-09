@@ -10,9 +10,10 @@ import SwiftUI
 struct SettingsView: View {
     @State private var isShowingDetailView = true
     @State private var isDarkMode = false
-    @AppStorage("spaceId") private var spaceId = "36329"
-    @AppStorage("userId") private var applicationId = "71232"
-    @AppStorage("accountToken") private var userToken = "MDc1ptkXkDGybujbSRSIUUHJ75jgoEjo4uUqrl05vyA="
+    
+    @State private var spaceId: String? = Foundation.UserDefaults.standard.string(forKey: "spaceId")
+    @State private var userId: String? = Foundation.UserDefaults.standard.string(forKey: "userId")
+    @State private var userToken: String? = Foundation.UserDefaults.standard.string(forKey: "userToken")
     
     var body: some View {
         NavigationView {
@@ -35,17 +36,17 @@ struct SettingsView: View {
                                 HStack {
                                     Text("Space ID").bold()
                                     Spacer()
-                                    Text(" ")
+                                    Text(spaceId ?? "")
                                 }
                                 HStack {
                                     Text("Application ID").bold()
                                     Spacer()
-                                    Text(" ")
+                                    Text(userId ?? "")
                                 }
                                 HStack {
                                     Text("Token").bold()
                                     Spacer()
-                                    Text(" ")
+                                    Text(userToken ?? "")
                                 }
                             }
                             Spacer()
@@ -56,16 +57,20 @@ struct SettingsView: View {
                     
                     HStack {
                         Spacer()
-                        NavigationLink(destination: UserDetailsView()) {
+                        NavigationLink(destination: UserDetailsView(onDataSaved: {
+                            spaceId = Foundation.UserDefaults.standard.string(forKey: "spaceId")
+                            userId = Foundation.UserDefaults.standard.string(forKey: "userId")
+                            userToken = Foundation.UserDefaults.standard.string(forKey: "userToken")
+                        })) {
                             Text("Change")
                         }
                     }
                    
                     Spacer()
-                    Toggle("Dark Mode", isOn: $isDarkMode)
-                        .padding().bold()
+                    // Activate featre with relevant ticket
+                    // Toggle("Dark Mode", isOn: $isDarkMode)
+                    //     .padding().bold()
                 }.padding()
-                
             }
         }
     }

@@ -72,8 +72,8 @@ struct ShoppingCartView: View {
             }
             
         }
-        .toast(isPresenting: $paymentManager.showToast){
-            AlertToast(type: $paymentManager.toastType.wrappedValue, style: .style(backgroundColor: Color.theme.shadow)
+        .toast(isPresenting: $paymentManager.toast.shouldShow){
+            AlertToast(type: $paymentManager.toast.type.wrappedValue, subTitle: $paymentManager.toast.title.wrappedValue, style: .style(backgroundColor: Color.theme.shadow)
             )}
     }
 }

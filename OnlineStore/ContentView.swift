@@ -13,14 +13,29 @@ struct ContentView: View {
     @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var launchViewManager: LaunchViewManager
     
+    var spaceId: String = Foundation.UserDefaults.standard.string(forKey: "spaceId") ?? ""
+    var userId: String = Foundation.UserDefaults.standard.string(forKey: "userId") ?? ""
+    var userToken: String = Foundation.UserDefaults.standard.string(forKey: "userToken") ?? ""
+    
+    @State var merchantDataSaved: Bool = false
+    
     init() {
         UITabBar.appearance().barTintColor = UIColor(Color.theme.background)
        }
 
     var body: some View {
         if launchViewManager.isLaunchViewActive {
-            LaunchView()
+            LaunchView().onAppear {
+                merchantDataSaved = !spaceId.isEmpty && !userId.isEmpty && !userToken.isEmpty
+            }
         } else {
+            if (!merchantDataSaved) {
+                UserDetailsView(onDataSaved: {
+                    withAnimation {
+                        merchantDataSaved.toggle()
+                    }
+                })
+            } else {
                 TabView() {
                     HomeView()
                         .tabItem {
@@ -40,14 +55,11 @@ struct ContentView: View {
                             Label("", systemImage: "gearshape")
                         }
                 }
-                .onAppear{
-                    // MOVE ME TO DIFFERENT PLACE!!!
-                    UserDefaults.standard.set("36329", forKey: "spaceId")
-                    UserDefaults.standard.set("71232", forKey: "userId")
-                    UserDefaults.standard.set("MDc1ptkXkDGybujbSRSIUUHJ75jgoEjo4uUqrl05vyA=", forKey: "userToken")
-                }
+                
+            }
         }
     }
+    
 }
 
 struct ContentViewPreviews: PreviewProvider {

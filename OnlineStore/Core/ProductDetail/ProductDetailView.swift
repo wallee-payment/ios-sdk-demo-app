@@ -69,9 +69,9 @@ struct ProductDetailView: View {
                 
                 Button {
                     cartManager.addProduct(product: product)
-                    showToast = true
+                    showToast.toggle()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        showToast = false
+                        showToast.toggle()
                     }
                 } label: {
                     Text("ADD TO CART")
