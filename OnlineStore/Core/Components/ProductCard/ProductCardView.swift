@@ -24,7 +24,7 @@ struct ProductCardView: View {
                     Text(product.name)
                         .font(.headline)
                         .lineLimit(2)
-                    Text(product.brand)
+                    Text(product.country)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }

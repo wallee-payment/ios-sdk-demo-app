@@ -27,16 +27,16 @@ struct ProductDetailView: View {
                          .frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
     
                         HStack {
-                            Text("Brand: ")
+                            Text("Country: ")
                                 .bold()
                                 .foregroundColor(Color.theme.accent)
-                            Text("\(product.brand)")
+                            Text("\(product.country)")
                                 .foregroundColor(Color.theme.accent)
                             Spacer()
                         }.padding(.horizontal)
                         
                         HStack {
-                            Text("Model: ")
+                            Text("Name: ")
                                 .bold()
                                 .foregroundColor(Color.theme.accent)
                             Text("\(product.name)")

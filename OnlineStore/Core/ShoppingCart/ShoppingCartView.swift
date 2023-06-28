@@ -64,7 +64,7 @@ struct ShoppingCartView: View {
                         .padding([.top, .bottom], 5)
                         .foregroundColor(Color.theme.background)
                 }
-                .presentModalView(item: $paymentManager.presentedModal, token: $paymentManager.token)
+                .presentModalView(isPresented: $paymentManager.presentedModal, token: $paymentManager.token)
                 .buttonStyle(.borderedProminent)
                 .disabled(cartManager.products.count <= 0)
                 .buttonBorderShape(.roundedRectangle(radius: 0.0))

@@ -32,11 +32,11 @@
 		79D488DA29C301E2004F2AE1 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D488D929C301E2004F2AE1 /* CartItem.swift */; };
 		79D74A102A308BA0004ED9D3 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4C0972A27533A002BBD44 /* Transaction.swift */; };
 		79DBF1F329B1E77B003C8D0C /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */; };
-		B5045268B194B6B881437DB3 /* Pods_OnlineStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57F3FECAC96652247AF6662 /* Pods_OnlineStore.framework */; };
+		F36B6EC76ECC95E4B480027A /* Pods_OnlineStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0B4D706EEB22C39F72AE18 /* Pods_OnlineStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		674C10717B9DD0A0F711DCA2 /* Pods-OnlineStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineStore.debug.xcconfig"; path = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore.debug.xcconfig"; sourceTree = "<group>"; };
+		636378CCAE233616F81D4525 /* Pods-OnlineStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineStore.debug.xcconfig"; path = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore.debug.xcconfig"; sourceTree = "<group>"; };
 		790020F529AF649A00DCE75B /* OnlineStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790020F829AF649A00DCE75B /* OnlineStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineStoreApp.swift; sourceTree = "<group>"; };
 		790020FC29AF649D00DCE75B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,8 +63,8 @@
 		79D488D929C301E2004F2AE1 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		79F4C0972A27533A002BBD44 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		814DD4D8541A7FD74908AE66 /* Pods-OnlineStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineStore.release.xcconfig"; path = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore.release.xcconfig"; sourceTree = "<group>"; };
-		C57F3FECAC96652247AF6662 /* Pods_OnlineStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8376742D5F696696BE7A9CB9 /* Pods-OnlineStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineStore.release.xcconfig"; path = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore.release.xcconfig"; sourceTree = "<group>"; };
+		9B0B4D706EEB22C39F72AE18 /* Pods_OnlineStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5045268B194B6B881437DB3 /* Pods_OnlineStore.framework in Frameworks */,
+				F36B6EC76ECC95E4B480027A /* Pods_OnlineStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +82,11 @@
 		790020EC29AF649A00DCE75B = {
 			isa = PBXGroup;
 			children = (
+				7977CACC2A3B3C3D0006D309 /* Documentation */,
 				790020F729AF649A00DCE75B /* OnlineStore */,
 				790020F629AF649A00DCE75B /* Products */,
 				C4233E123573BA67FF76DB94 /* Pods */,
-				AF1A14DCDE8EB51366AE2CE3 /* Frameworks */,
+				CCDA403E3A1C9F95ACEF23DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +234,21 @@
 			path = CartProductRow;
 			sourceTree = "<group>";
 		};
+		7977CACC2A3B3C3D0006D309 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				7977CACD2A3B3C480006D309 /* Images */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		7977CACD2A3B3C480006D309 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		7991F6BA29CDA9AC009CFCFE /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,21 +273,21 @@
 			path = UserDetails;
 			sourceTree = "<group>";
 		};
-		AF1A14DCDE8EB51366AE2CE3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C57F3FECAC96652247AF6662 /* Pods_OnlineStore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C4233E123573BA67FF76DB94 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				674C10717B9DD0A0F711DCA2 /* Pods-OnlineStore.debug.xcconfig */,
-				814DD4D8541A7FD74908AE66 /* Pods-OnlineStore.release.xcconfig */,
+				636378CCAE233616F81D4525 /* Pods-OnlineStore.debug.xcconfig */,
+				8376742D5F696696BE7A9CB9 /* Pods-OnlineStore.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CCDA403E3A1C9F95ACEF23DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B0B4D706EEB22C39F72AE18 /* Pods_OnlineStore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,12 +297,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7900210329AF649D00DCE75B /* Build configuration list for PBXNativeTarget "OnlineStore" */;
 			buildPhases = (
-				F9DB4AA614E99EF7269EB9E1 /* [CP] Check Pods Manifest.lock */,
+				4722996C9BE3806A53823932 /* [CP] Check Pods Manifest.lock */,
 				790020F129AF649A00DCE75B /* Sources */,
 				790020F229AF649A00DCE75B /* Frameworks */,
 				790020F329AF649A00DCE75B /* Resources */,
-				AD8430405BEA9D4A19D4B355 /* [CP] Embed Pods Frameworks */,
-				A53014F98A4A3043B610567B /* [CP] Copy Pods Resources */,
+				DD37F5100C3F4921ABA6AC11 /* [CP] Embed Pods Frameworks */,
+				458BA6B8C3C180A82DD62BA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,7 +359,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A53014F98A4A3043B610567B /* [CP] Copy Pods Resources */ = {
+		458BA6B8C3C180A82DD62BA4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,24 +376,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD8430405BEA9D4A19D4B355 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F9DB4AA614E99EF7269EB9E1 /* [CP] Check Pods Manifest.lock */ = {
+		4722996C9BE3806A53823932 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,6 +396,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD37F5100C3F4921ABA6AC11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineStore/Pods-OnlineStore-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -551,14 +567,14 @@
 		};
 		7900210429AF649D00DCE75B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 674C10717B9DD0A0F711DCA2 /* Pods-OnlineStore.debug.xcconfig */;
+			baseConfigurationReference = 636378CCAE233616F81D4525 /* Pods-OnlineStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"OnlineStore/Preview Content\"";
-				DEVELOPMENT_TEAM = NDF4F7L324;
+				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -566,11 +582,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Wallee.OnlineStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -581,14 +598,14 @@
 		};
 		7900210529AF649D00DCE75B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 814DD4D8541A7FD74908AE66 /* Pods-OnlineStore.release.xcconfig */;
+			baseConfigurationReference = 8376742D5F696696BE7A9CB9 /* Pods-OnlineStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"OnlineStore/Preview Content\"";
-				DEVELOPMENT_TEAM = NDF4F7L324;
+				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -596,11 +613,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Wallee.OnlineStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

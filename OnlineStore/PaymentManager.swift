@@ -83,7 +83,6 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                             self.toast = Toast(shouldShow: false, type: .error(Color.red))
                         }
-                        //return
                     }
                 case .failure:
                     self.toast = Toast(shouldShow: true, type: .error(Color.red), title: "Failed to create the transaction, please double check user credentials")
