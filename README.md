@@ -1,103 +1,197 @@
 # MSDK-demo-ios-app
 
-## Getting started test
+# Wallee Payment SDK
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Online Shop is an IOS SwiftUI application intended to showcase he integration of Wallee Payment SDK.
+![App screenshots](Documentation/Images/appScreenshots.png)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Running this project
 
-## Add your files
+### Requirements
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Xcode 12 or above
+Wallee account
 
+### Set up Wallee
+
+To use the iOS Payment SDK, you need a [wallee account](https://app-wallee.com/user/signup). After signing up, set up your space and enable the payment methods you would like to support.
+
+### Project Setup
+
+In order to run the project on you local machine, please do the following steps:
+
+1. Install [Xcode](https://developer.apple.com/xcode/).
+2. Install [Cocoapods](https://cocoapods.org/) by running `brew install cocoapods`.
+3. clone the repository and cd into it's directory
+4. run `pod install`
+5. run the project with xCode
+
+### Authentication into the app
+
+![App screenshots](Documentation/Images/auth.png)
+In order to get all the needed credentials for authentication, please follow the step 2.1 from [documentation](https://app-wallee.com/en-us/doc/api/web-service/v2#_authentication).
+To login you will need the following information:
+
+1. Space ID
+2. Application ID
+3. Token
+
+## Integration of the SDK
+
+### API reference
+
+| API                                                                           | Type      | Description                                                                                                                                                                     |
+| ----------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| WalleePaymentResultObserver                                                   | protocol  | Protocol for handling post-payment events `paymentResult`                                                                                                                       |
+| `func paymentResult(paymentResultMessage: PaymentResult)`                     | function  | Result handler for transaction state                                                                                                                                            |
+| `func launchPayment(token: String, rootController: UIViewController)`         | function  | Opening payment dialog (activity)                                                                                                                                               |
+| `func setDarkTheme(dark: NSMutableDictionary)`                                | function  | Can override the whole dark theme or just some specific color.                                                                                                                  |
+| `func setLightTheme(light: NSMutableDictionary)`                              | function  | Can override the whole light theme or just some specific color.                                                                                                                 |
+| `func setCustomTheme(custom: NSMutableDictionary/nill, baseTheme: ThemeEnum)` | function  | Force to use only this theme (independent on user's setup). Can override default light/dark theme and force to use it or completely replace all or specific colors (DARK/LIGHT) |
+| `func presentModalView(isPresented: Bool, token: String)`                     | extension | SwiftUI View modifier to present the UI part of the Payment SDK                                                                                                                 |
+
+### Configuration
+
+Import the SDK to your app as [Cocoapod](https://cocoapods.org/)
+
+`pod ‘WalleePaymentSdk’, 'versionPlaceholder' :source=> ‘https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-spec.git’`
+
+```sh
+target 'DemoApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod ‘WalleePaymentSdk’, 'versionPlaceholder' :source=> ‘https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-spec.git’`
+  target 'DemoAppTests' do
+    inherit! :search_paths
+  end
+
+end
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/wallee-payment/frontend/msdk-demo-ios-app.git
-git branch -M master
-git push -uf origin master
+
+### Create transaction
+
+For security reasons, your app cannot create transactions and fetch access tokens. This has to be done on your server by talking to the [wallee Web Service API](https://app-wallee.com/en-us/doc/api/web-service). You can use one of the official SDK libraries to make these calls.
+
+To use the iOS Payment SDK to collect payments, an endpoint needs to be added on your server that creates a transaction by calling the [create transaction](https://app-wallee.com/doc/api/web-service#transaction-service--create) API endpoint. A transaction holds information about the customer and the line items and tracks charge attempts and the payment state.
+
+Once the transaction has been created, your endpoint can fetch an access token by calling the [create transaction credentials](https://app-wallee.com/doc/api/web-service#transaction-service--create-transaction-credentials) API endpoint. The access token is returned and passed to the iOS Payment SDK.
+
+```bash
+# Create a transaction
+curl 'https://app-wallee.com/api/transaction/create?spaceId=1' \
+  -X "POST" \
+  -d "{{TRANSACTION_DATA}}"
+
+# Fetch an access token for the created transaction
+curl 'https://app-wallee.com/api/transaction/createTransactionCredentials?spaceId={{SPACE_ID}}&id={{TRANSACTION_ID}}' \
+  -X 'POST'
 ```
 
-## Integrate with your tools
+#### SwiftUI Implementation
 
-- [ ] [Set up project integrations](https://gitlab.com/wallee-payment/frontend/msdk-demo-ios-app/-/settings/integrations)
+First of all make sure you import the `WalleePaymentSdk` package and initialize it in relevant class. You also need to extend the class with `WalleePaymentResultObserver` to able to receive the result of payment:
 
-## Collaborate with your team
+```swift
+// PaymentManager.swift
+import WalleePaymentSdk
+...
+class PaymentManager: WalleePaymentResultObserver {
+...
+func onOpenSdkPress(){
+    let wallee = WalleePaymentSdk(eventObserver: self)
+    ...
+    }
+}
+```
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+To display the UI of Payment SDK make sure you import the `WalleePaymentSdk` into the relevant View:
 
-## Test and Deploy
+```swift
+// ContentView.swift
+import WalleePaymentSdk
+...
+    Button {
+       // add code for generating transaction and fetching the token
+       isModalPresented = true
+    } label: {
+        Text("Checkout")
+    }
+    .presentModalView(isPresented: isModalPresented, token: token)
+```
 
-Use the built-in continuous integration in GitLab.
+Use presentModalView custom modifier for the UI part, passing two arguments: `isPresented` (modal presented state) and `token`.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Handle result
 
----
+The response object contains these properties:
 
-# Editing this README
+- `code` describing the result's type.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+| Code        | Description                                                   |
+| ----------- | ------------------------------------------------------------- |
+| `COMPLETED` | The payment was successful.                                   |
+| `FAILED`    | The payment failed. Check the `message` for more information. |
+| `CANCELED`  | The customer canceled the payment.                            |
 
-## Suggestions for a good README
+- `message` providing a localized error message that can be shown to the customer.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```swift
+import WalleePaymentSdk
+...
 
-## Name
+class PaymentManager: ObservableObject, WalleePaymentResultObserver {
+...
+func paymentResult(paymentResultMessage: PaymentResult) {
+        print("PAYMENT RESULT: ", paymentResultMessage.code)
+        self.resultCallback = paymentResultMessage.code.rawValue
+        ...
+    }
+}
+```
 
-Choose a self-explaining name for your project.
+### Verify payment
 
-## Description
+As customers could quit the app or lose network connection before the result is handled or malicious clients could manipulate the response, it is strongly recommended to set up your server to listen for webhook events the get transactions' actual states. Find more information in the [webhook documentation](https://app-wallee.com/en-us/doc/webhooks).
 
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## Theming
 
-## Badges
+The appearance of the payment dialog can be customized to match the look and feel of your app. This can be done for both the light and dark theme individually.
 
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Colors can be modified by passing a JSON object to the `WalleePaymentSdk` instance. You can either completely override the theme or only change certain colors.
 
-## Visuals
+- `walleePaymentSdk.setLightTheme(NSMutableDictionary)` allows to modify the payment dialog's light theme.
+- `walleePaymentSdk.setDarkTheme(NSMutableDictionary)` allows to modify the payment dialog's dark theme.
+- `walleePaymentSdk.setCustomTheme(NSMutableDictionary|| nil, ThemeEnum)` allows to enforce a specific theme (dark, light or your own).
 
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```swift
+import WalleePaymentSdk
+...
+    let walleePaymentSdk = WalleePaymentSdk (eventObserver: self)
 
-## Installation
+    func openSdkClick()
+    {
+        ....
+        changeColorSchema(wallee: wallee)
+        ...
+    }
 
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+    private func changeColorSchema(wallee: WalleePaymentSdk)
+    {
+        walleePaymentSdk.setLightTheme(light: getLightTheme())
+    }
+```
 
-## Usage
+This overrides the colors `colorBackground`, `colorText`, `colorHeadingText` and `colorError` for both the dark and light theme.
 
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+The `changeColorSchema` function allows to define the theme to be used by the payment dialog and prevent it from switching themes based on the user's settings. This way e.g. high-contrast and low-contrast themes can be added. The logic for switching between these themes is up to you though.
 
-## Support
+You can also use `setCustomTheme` to force the usage of the light or dark theme.
 
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```swift
+walleePaymentSdk.setCustomTheme(custom: getNewCustomTheme(), baseTheme: .DARK)
+```
 
-## Roadmap
-
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-
-Show your appreciation to those who have contributed to the project.
-
-## License
-
-For open source projects, say how it is licensed.
-
-## Project status
-
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+```swift
+walleePaymentSdk.setCustomTheme(custom: getNewCustomTheme(), baseTheme: .LIGHT)
+```

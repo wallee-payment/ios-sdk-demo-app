@@ -48,6 +48,7 @@ struct UserDetailsView: View {
                         .bold()
                         .frame(maxWidth: .infinity)
                         .padding([.top, .bottom], 5)
+                        .foregroundColor(Color.theme.background)
                 }
                 .disabled(spaceId.count <= 0 || userId.count <= 0 || userToken.count <= 0)
                 .buttonStyle(.borderedProminent)

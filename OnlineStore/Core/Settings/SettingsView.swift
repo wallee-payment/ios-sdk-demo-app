@@ -57,14 +57,15 @@ struct SettingsView: View {
                     
                     HStack {
                         Spacer()
-                        NavigationLink(destination: UserDetailsView(onDataSaved: {
-                            spaceId = Foundation.UserDefaults.standard.string(forKey: "spaceId")
-                            userId = Foundation.UserDefaults.standard.string(forKey: "userId")
-                            userToken = Foundation.UserDefaults.standard.string(forKey: "userToken")
-                        })) {
-                            Text("Change")
+                            NavigationLink(destination: UserDetailsView(onDataSaved: {
+                                spaceId = Foundation.UserDefaults.standard.string(forKey: "spaceId")
+                                userId = Foundation.UserDefaults.standard.string(forKey: "userId")
+                                userToken = Foundation.UserDefaults.standard.string(forKey: "userToken")
+                            })
+                            ) {
+                                Text("Change")
+                            }
                         }
-                    }
                    
                     Spacer()
                     // Activate featre with relevant ticket
@@ -72,7 +73,7 @@ struct SettingsView: View {
                     //     .padding().bold()
                 }.padding()
             }
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 
