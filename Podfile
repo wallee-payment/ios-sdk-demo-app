@@ -6,7 +6,7 @@ target 'OnlineStore' do
   use_frameworks!
 
   # Pods for OnlineStore
-  pod 'WalleePaymentSdk'
+  pod 'WalleePaymentSdk', '1.1.0'
   pod 'AlertToast'
   # pod 'Wormholy', :configurations => ['Debug']
   pod 'Alamofire'

@@ -6,7 +6,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlertToast
-  - WalleePaymentSdk
+  - WalleePaymentSdk (= 1.1.0)
 
 SPEC REPOS:
   https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-spec.git:
@@ -20,6 +20,6 @@ SPEC CHECKSUMS:
   AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
   WalleePaymentSdk: 7baafbe433ea453e1d91f0212368dfb6dbcb2cf6
 
-PODFILE CHECKSUM: ad9a941c8a07e4f6f45a7812b73973fd99a0387e
+PODFILE CHECKSUM: ff5a45373719ec9c86aab1c6e8b7a28c549e5476
 
 COCOAPODS: 1.12.1
