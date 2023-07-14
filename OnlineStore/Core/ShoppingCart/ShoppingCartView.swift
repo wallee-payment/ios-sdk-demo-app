@@ -13,7 +13,7 @@ struct ShoppingCartView: View {
     @EnvironmentObject var cartManager: CartManager
     @StateObject private var paymentManager: PaymentManager = PaymentManager(onPaymentComplete: {
         print(">>paymentResult")
-        //cartManager.removeAllProducts()
+        //TO DO: cartManager.removeAllProducts()
     })
 
     var body: some View {

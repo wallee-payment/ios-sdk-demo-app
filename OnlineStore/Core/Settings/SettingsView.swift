@@ -68,7 +68,7 @@ struct SettingsView: View {
                         }
                    
                     Spacer()
-                    // Activate featre with relevant ticket
+                    // Activate feature with relevant ticket
                     // Toggle("Dark Mode", isOn: $isDarkMode)
                     //     .padding().bold()
                 }.padding()
