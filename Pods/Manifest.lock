@@ -9,7 +9,7 @@ DEPENDENCIES:
   - WalleePaymentSdk (= 1.1.0)
 
 SPEC REPOS:
-  https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-spec.git:
+  https://github.com/wallee-payment/ios-mobile-sdk-spec.git:
     - WalleePaymentSdk
   trunk:
     - Alamofire
@@ -18,8 +18,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
-  WalleePaymentSdk: 7baafbe433ea453e1d91f0212368dfb6dbcb2cf6
+  WalleePaymentSdk: ec920a964213e7af8f45f0931cbf69967f636289
 
-PODFILE CHECKSUM: ff5a45373719ec9c86aab1c6e8b7a28c549e5476
+PODFILE CHECKSUM: c9f2d744547d2d0fee753108f14a89be47f8c433
 
 COCOAPODS: 1.12.1
