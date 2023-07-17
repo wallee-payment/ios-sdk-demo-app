@@ -20,21 +20,36 @@ To use the iOS Payment SDK, you need a [wallee account](https://app-wallee.com/u
 
 In order to run the project on you local machine, please do the following steps:
 
-1. Install [Xcode](https://developer.apple.com/xcode/).
-2. Install [Cocoapods](https://cocoapods.org/) by running `brew install cocoapods`.
+1. install [Xcode](https://developer.apple.com/xcode/).
+2. install [Cocoapods](https://cocoapods.org/) by running `brew install cocoapods`.
 3. clone the repository and cd into it's directory
 4. run `pod install`
 5. run the project with xCode
 
-### Authentication into the app
+## Authentication into the app
 
-![App screenshots](Documentation/Images/auth.png)
-In order to get all the needed credentials for authentication, please follow the step 2.1 from [documentation](https://app-wallee.com/en-us/doc/api/web-service/v2#_authentication).
-To login you will need the following information:
+In order to login into the application you will need the following information:
 
-1. Space ID
-2. Application ID
-3. Token
+- Space ID
+- Application ID
+- Token
+  ![App screenshots](Documentation/Images/auth.png)
+
+To get all the needed credentials for authentication, please follow the steps:
+
+1. create an account on [Wallee portal](https://app-wallee.com/user/signup) if you don't have any
+2. go to [Account > Users > Application Users](https://app-wallee.com/account/select?target=/user/application/list) and select the account you would like to use
+3. on the side menu sleect Application users
+   ![App screenshots](Documentation/Images/appUsers.png)
+4. create a new application user, after doing it, the user’s ID and authentication key will be shown to you. Please be aware, that once you close the dialog or browser window, you will not be able to see the authentication key again. So make sure to write it down.
+   ![App screenshots](Documentation/Images/createUser.png)
+   ![App screenshots](Documentation/Images/newUser.png)
+5. paste the Authentication key value into Token field of the app
+6. copy the Application User ID and Space ID into the app as shown on the screenshot
+   ![App screenshots](Documentation/Images/userData.png)
+7. now let's assign the role to the Application user. To do so click Manage as shown on screenshot and select the preferred role
+   ![App screenshots](Documentation/Images/manageRoles.png)
+   ![App screenshots](Documentation/Images/roles.png)
 
 ## Integration of the SDK
 
