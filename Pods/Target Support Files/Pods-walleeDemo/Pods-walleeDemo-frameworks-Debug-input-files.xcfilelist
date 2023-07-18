@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlertToast/AlertToast.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/WalleePaymentSdk/WalleePaymentSdk.framework/WalleePaymentSdk

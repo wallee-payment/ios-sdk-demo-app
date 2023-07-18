@@ -24,6 +24,7 @@
 		04A8430BFC619C34E5F4D3878D094380 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333B026FEB9C2B94D81D2A63F7810E3A /* CachedResponseHandler.swift */; };
 		079F0820555C5B86C9FBD5EC6344137F /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434D34F2BF35A4FB49F15ACB383A28F /* Protected.swift */; };
 		11CCD832BD537718892C6A216A38490A /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95506E36592ED02E64B1D7DD17E38148 /* URLRequest+Alamofire.swift */; };
+		17AE03F59550B7F541E2318F6CDEBEC3 /* Pods-walleeDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4913179650D6CB446252BFB5C3DBC4 /* Pods-walleeDemo-dummy.m */; };
 		197457852FC83E905248660B0F930452 /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5E2905C76E6578DF015C3E0D364077 /* AuthenticationInterceptor.swift */; };
 		1AFD57838680DF58184FF94D14C7F3FF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F169A79DF65BBB9304C73B58675F5247 /* RequestInterceptor.swift */; };
 		282FCD4EA8B05830E9108690B8CD336B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D1A47C064061226123DFDB94352B66 /* Session.swift */; };
@@ -35,11 +36,9 @@
 		481F3BE2185022F134DFD932BBD79A40 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC7BA531CAC6FA9AFABD2BD1D78738 /* BlurView.swift */; };
 		482B74C0548970BB9C095E2D8530E421 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFEF03686CC516537BF75ADAD617B4 /* ParameterEncoding.swift */; };
 		529173B31EFCD3D199E79866AFBEC86C /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606811152B01AAACF76247EF0ACBCF5 /* HTTPHeaders.swift */; };
-		550058C9A18189DBB1016742AB992558 /* Pods-OnlineStore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E33CC885A98398F3F8F343A2299B5D45 /* Pods-OnlineStore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B92A66A66BD639411C3D839A0F87B0C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C0799A53C5FD8AA3F7CB62265EA90 /* Request.swift */; };
 		5C7E1FD0252DFA6033E7E08D5984D7B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		643A7AFFB7AEB70B2B9B7E0926055023 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3516026FD9912C1A82D55F3D3FF0F3 /* RetryPolicy.swift */; };
-		660037120913E5BD3DCE52D0870EA7D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		67B10FEAA3B7E5387D20E76B1085E94D /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B571F2CA680D9C1BB5FFECB19B9E3F1B /* URLSessionConfiguration+Alamofire.swift */; };
 		6EA08F424ACCD3B0D6222BEF90912961 /* AlertToast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C79D29B6B79264AFFD4E08333D550699 /* AlertToast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		732C29255F73EF3D83D49BD4F8FEAA8F /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907F5242AB4A14EE6AFAE18970F9317 /* MultipartUpload.swift */; };
@@ -58,7 +57,6 @@
 		B17D933C8F8BC6A4F91AA620D7D7A870 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50883A61284F0F6952DE07B3A85400E5 /* ParameterEncoder.swift */; };
 		BAB17A1C6CAD14B3788973EAF8466C93 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13BBA5C563B7D4780974ED42683C84 /* NetworkReachabilityManager.swift */; };
 		C04739CBCEE445B66192BFA708655EDF /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E360060CFAC612D63D31108A1C4C45A /* StringEncoding+Alamofire.swift */; };
-		C380ED2E40326D8C6B0DBDA5AAA42EE0 /* Pods-OnlineStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153CE8815C19CC5BED3A027778B1B1E /* Pods-OnlineStore-dummy.m */; };
 		C8269B42DED12AB1F275648D0BD32E45 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC16F775D04DB2D78AAF6F28B78CFF46 /* URLEncodedFormEncoder.swift */; };
 		D0560E8E2E5EB407B5D8E0381BF453FA /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B89882F66557AE29103D43D146A59 /* URLConvertible+URLRequestConvertible.swift */; };
 		D09FBBADAF7C5C757AA5AB5DFE54BD25 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E6EFC204B9E9214EF6E090432501A /* Alamofire-dummy.m */; };
@@ -66,10 +64,12 @@
 		D7BCBE1EB4A638403C265CE2199EFF1B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */; };
 		DAE75918F0786809E98E99512119DF8D /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9FE0FC0B824806DD3F6B434E0492F /* ActivityIndicator.swift */; };
 		E6251F02EE12804D1B66AE32E716E664 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B4D2E8CB8E2E946A36FC7150124C30 /* SessionDelegate.swift */; };
+		E64309394FE7E1DE96903A23778F304F /* Pods-walleeDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 052B173CE41F43385A7FBB3D726F9CF6 /* Pods-walleeDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECE6F23823454A8FDB3F97CE1A7CD182 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC951A9066AE2A8D17F98975D1770203 /* RedirectHandler.swift */; };
 		ECF2F956B37A4C28B228BC291A57AD6E /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DFD906E7DF80A21DB7FE45C69686C2 /* RequestTaskMap.swift */; };
 		F038D81F7ABAA15CF03246AD4BF334F7 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1FE51E92784D6B870098AA827815B6B /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2415AE8678DE2698B7AD7D88B1A5C0F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BE8033D3A74561E1A21B1B69D99A4B /* AlamofireExtended.swift */; };
+		F3025F6A41BDA99B54E194E520098C82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		F66CC47AD425C8D57BD149AFD09C2AFE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957A0715702B4109AD5F07F62AE88B1 /* HTTPMethod.swift */; };
 		F6E94E8EE1CE35F49B9091BE8748587B /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A11135F4F345CB19F4B2AF9702E99 /* Result+Alamofire.swift */; };
 /* End PBXBuildFile section */
@@ -82,59 +82,64 @@
 			remoteGlobalIDString = 06AF07847D09E5BE7E5729DDFD986094;
 			remoteInfo = "WalleePaymentSdk-WalleePayment";
 		};
-		56E520F89174D8B9664FA32333E67EE9 /* PBXContainerItemProxy */ = {
+		6797CB51409630BB6AD2850A0F34EBD5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BD9F52E07CA8CCC9E5112A7D8C1CE821;
 			remoteInfo = AlertToast;
 		};
-		6C3629C759430712EC5AEF9E29F9B1BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E00BEEB166D657C3AE5E94956855829;
-			remoteInfo = WalleePaymentSdk;
-		};
-		B26A86415434A966DBDAF0B3E111D77F /* PBXContainerItemProxy */ = {
+		B148DED875301A1AF524674D07FED02E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
 		};
+		C6952E1C29C113F8ECDF6E8601FBD4C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E00BEEB166D657C3AE5E94956855829;
+			remoteInfo = WalleePaymentSdk;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0153CE8815C19CC5BED3A027778B1B1E /* Pods-OnlineStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OnlineStore-dummy.m"; sourceTree = "<group>"; };
+		052B173CE41F43385A7FBB3D726F9CF6 /* Pods-walleeDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-walleeDemo-umbrella.h"; sourceTree = "<group>"; };
 		09BFEF03686CC516537BF75ADAD617B4 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		0B4E6EFC204B9E9214EF6E090432501A /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		0C2D8C69306596BE827DC8C5E6AF8380 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		0D6BDDFAA0D77C467066BCC2658514A0 /* Pods-walleeDemo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-walleeDemo"; path = Pods_walleeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAA2878DE13D49D27C3FAC3D976BF42 /* AlertToast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertToast.debug.xcconfig; sourceTree = "<group>"; };
 		0E738A9644314BCB75A6B907FF204ABD /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		0F275BAB7FB5A1B7B5BC3D9B312CD3DC /* WalleePaymentSdk-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "WalleePaymentSdk-xcframeworks.sh"; sourceTree = "<group>"; };
+		13CB8C9B7BD670704333B2D1FA4AD36C /* Pods-walleeDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-walleeDemo-frameworks.sh"; sourceTree = "<group>"; };
 		1606811152B01AAACF76247EF0ACBCF5 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		193B74886616025C664143A30BDFED36 /* Pods-walleeDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-walleeDemo-resources.sh"; sourceTree = "<group>"; };
 		1A3ABCDA506BD1ED6FCC8EAAF37EC333 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
 		1B13BBA5C563B7D4780974ED42683C84 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		245F348C4AB32EF0165A4F11A420376B /* Pods-walleeDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-walleeDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2CC92B8875AB4B0EE141DF99BBCEE097 /* Pods-walleeDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-walleeDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		2D5E2905C76E6578DF015C3E0D364077 /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
 		333B026FEB9C2B94D81D2A63F7810E3A /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		33760BE6700D6F964DF858BFEA552266 /* ResourceBundle-WalleePayment-WalleePaymentSdk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-WalleePayment-WalleePaymentSdk-Info.plist"; sourceTree = "<group>"; };
 		344C0799A53C5FD8AA3F7CB62265EA90 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		3B70B97421E029A9CACE6C45B3B54F51 /* Pods-OnlineStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OnlineStore.release.xcconfig"; sourceTree = "<group>"; };
+		4E3C50BB120BA893A8453CC2EF733761 /* Pods-walleeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-walleeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4E75DE786AD71914B168EAAA89EADF60 /* WalleePaymentSdk-WalleePayment */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "WalleePaymentSdk-WalleePayment"; path = WalleePayment.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		50883A61284F0F6952DE07B3A85400E5 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		52156914F3393430CD8F299B6702C9FE /* AlertToast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertToast-prefix.pch"; sourceTree = "<group>"; };
+		58C08D785E73E223B43018F3C72BA27E /* Pods-walleeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-walleeDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5D4913179650D6CB446252BFB5C3DBC4 /* Pods-walleeDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-walleeDemo-dummy.m"; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E38E19E6AC4ADE1D4C0E96194D0AE16 /* Pods-OnlineStore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OnlineStore-Info.plist"; sourceTree = "<group>"; };
 		61710FC37B46C776FF7710F7B6CDFB1E /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		65BE8033D3A74561E1A21B1B69D99A4B /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		679EAE10D7AB839638A64877F43A4A09 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
 		69FFD69A7C9F892BFA536E47373198AA /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		6B6FF1E85342ABE679D4C38F7E879292 /* Pods-walleeDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-walleeDemo.modulemap"; sourceTree = "<group>"; };
 		6BD3C8ACAFE82106F8FD24342EA63F65 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
-		6D35D9A4796EB6BF569E96C367F9C8EF /* Pods-OnlineStore-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OnlineStore-frameworks.sh"; sourceTree = "<group>"; };
 		704E1FE8B6381A66AB3F113038109964 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
 		7A06D6B90498FF33B6B0845033E0D4B6 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		7D722D047C06BEC8D561B152B4C8B123 /* Pods-OnlineStore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OnlineStore-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7E1A11135F4F345CB19F4B2AF9702E99 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		86D4027C5E4D20F8B9F600FB7CD84142 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
@@ -150,20 +155,18 @@
 		AC3F463F5805216D10031B19781ED1E5 /* AlertToast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlertToast.release.xcconfig; sourceTree = "<group>"; };
 		AC951A9066AE2A8D17F98975D1770203 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		AD1B89882F66557AE29103D43D146A59 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
-		AEFFFAED4A4F8FE37591426D205C26D4 /* Pods-OnlineStore-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OnlineStore-resources.sh"; sourceTree = "<group>"; };
 		B1BBB82C9EA8B09B9625754BFB0F2601 /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
 		B3D1A47C064061226123DFDB94352B66 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		B434D34F2BF35A4FB49F15ACB383A28F /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		B571F2CA680D9C1BB5FFECB19B9E3F1B /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
-		B92D5108A189ABAD35440A6C3DB1D4D0 /* Pods-OnlineStore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OnlineStore.modulemap"; sourceTree = "<group>"; };
 		BC16F775D04DB2D78AAF6F28B78CFF46 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
-		C347520886CD9E2331B1BA4628204508 /* Pods-OnlineStore-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OnlineStore-acknowledgements.plist"; sourceTree = "<group>"; };
 		C4D0D389FD9BF56FFA011EF699739AAF /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		C6EC7BA531CAC6FA9AFABD2BD1D78738 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Sources/AlertToast/BlurView.swift; sourceTree = "<group>"; };
 		C79D29B6B79264AFFD4E08333D550699 /* AlertToast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlertToast-umbrella.h"; sourceTree = "<group>"; };
 		CA1592D28A6DBED6D34364D39CE4397A /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		CADD688651036900B53F95E109B15E09 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		CB3516026FD9912C1A82D55F3D3FF0F3 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
+		D0CCF83E39CFDBC48B65E29D8E45E2EE /* Pods-walleeDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-walleeDemo-Info.plist"; sourceTree = "<group>"; };
 		D42971A1219BD8356022726EA14A8B10 /* RequestCompression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestCompression.swift; path = Source/RequestCompression.swift; sourceTree = "<group>"; };
 		D5DDF8AFCA98F4E65562CBF9C195E127 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		D78C7B95EFE4C7325BFB06D75C3DE06E /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -171,29 +174,18 @@
 		D957A0715702B4109AD5F07F62AE88B1 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		DA6CAF48546A513E3C562991537736A6 /* WalleePaymentSdk.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = WalleePaymentSdk.xcframework; sourceTree = "<group>"; };
 		E24721CF693B944F67F88FAA0F350BCB /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		E33CC885A98398F3F8F343A2299B5D45 /* Pods-OnlineStore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OnlineStore-umbrella.h"; sourceTree = "<group>"; };
 		E502B52EF1F483C58ED2E16617D55C0D /* walleepaymentsdkbundle.jsbundle */ = {isa = PBXFileReference; includeInIndex = 1; path = walleepaymentsdkbundle.jsbundle; sourceTree = "<group>"; };
-		E6CBDFCD9C8717FC7732211C68B06320 /* Pods-OnlineStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OnlineStore.debug.xcconfig"; sourceTree = "<group>"; };
 		E9DFD906E7DF80A21DB7FE45C69686C2 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		E9EFDD3E00A1F3285D73BC023E4CD603 /* WalleePaymentSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WalleePaymentSdk.release.xcconfig; sourceTree = "<group>"; };
 		EDF9FE0FC0B824806DD3F6B434E0492F /* ActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = Sources/AlertToast/ActivityIndicator.swift; sourceTree = "<group>"; };
 		F169A79DF65BBB9304C73B58675F5247 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		F1FE51E92784D6B870098AA827815B6B /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		F315EAAB337C411DBBC9A6E90EA759E6 /* Pods-OnlineStore */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OnlineStore"; path = Pods_OnlineStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A6CBE635CE43A456E855CF0659D676 /* WalleePaymentSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WalleePaymentSdk.debug.xcconfig; sourceTree = "<group>"; };
 		F72C42D08BDD5B32BDFB65E66B605802 /* AlertToast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlertToast-Info.plist"; sourceTree = "<group>"; };
 		FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		015109765373DF7A1C30E69E20B2BC97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				660037120913E5BD3DCE52D0870EA7D0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		347779031190EDC071A4F2E9073598F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +207,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40CDD90E1578E498F31496BB7EA207D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3025F6A41BDA99B54E194E520098C82 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +284,17 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		6996CC07C4118FF461AF789783853DF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */,
+				0D6BDDFAA0D77C467066BCC2658514A0 /* Pods-walleeDemo */,
+				4E75DE786AD71914B168EAAA89EADF60 /* WalleePaymentSdk-WalleePayment */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		80EE71E5BC6AC81EF0F18921D2F31919 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,24 +303,6 @@
 				237963CEAA9B0CAF828DCC94E9D6A4D5 /* WalleePaymentSdk */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		A35EC2E0C69503DDFD396BFACF9302C9 /* Pods-OnlineStore */ = {
-			isa = PBXGroup;
-			children = (
-				B92D5108A189ABAD35440A6C3DB1D4D0 /* Pods-OnlineStore.modulemap */,
-				7D722D047C06BEC8D561B152B4C8B123 /* Pods-OnlineStore-acknowledgements.markdown */,
-				C347520886CD9E2331B1BA4628204508 /* Pods-OnlineStore-acknowledgements.plist */,
-				0153CE8815C19CC5BED3A027778B1B1E /* Pods-OnlineStore-dummy.m */,
-				6D35D9A4796EB6BF569E96C367F9C8EF /* Pods-OnlineStore-frameworks.sh */,
-				5E38E19E6AC4ADE1D4C0E96194D0AE16 /* Pods-OnlineStore-Info.plist */,
-				AEFFFAED4A4F8FE37591426D205C26D4 /* Pods-OnlineStore-resources.sh */,
-				E33CC885A98398F3F8F343A2299B5D45 /* Pods-OnlineStore-umbrella.h */,
-				E6CBDFCD9C8717FC7732211C68B06320 /* Pods-OnlineStore.debug.xcconfig */,
-				3B70B97421E029A9CACE6C45B3B54F51 /* Pods-OnlineStore.release.xcconfig */,
-			);
-			name = "Pods-OnlineStore";
-			path = "Target Support Files/Pods-OnlineStore";
 			sourceTree = "<group>";
 		};
 		AAE57D5AB509AEA359AC5969CB889D70 /* Alamofire */ = {
@@ -366,15 +359,41 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		CD9BCEDE22604A88EA27B69097BA4521 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5BB306FB039CB1418E8ACBA15C918 /* Pods-walleeDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				80EE71E5BC6AC81EF0F18921D2F31919 /* Pods */,
-				E3CE6A878F63EF23C56C43D39B055DDD /* Products */,
-				F590B32F5AAC36183FD310C73B35F162 /* Targets Support Files */,
+				6996CC07C4118FF461AF789783853DF2 /* Products */,
+				CD9BCEDE22604A88EA27B69097BA4521 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D4D5BB306FB039CB1418E8ACBA15C918 /* Pods-walleeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6B6FF1E85342ABE679D4C38F7E879292 /* Pods-walleeDemo.modulemap */,
+				245F348C4AB32EF0165A4F11A420376B /* Pods-walleeDemo-acknowledgements.markdown */,
+				2CC92B8875AB4B0EE141DF99BBCEE097 /* Pods-walleeDemo-acknowledgements.plist */,
+				5D4913179650D6CB446252BFB5C3DBC4 /* Pods-walleeDemo-dummy.m */,
+				13CB8C9B7BD670704333B2D1FA4AD36C /* Pods-walleeDemo-frameworks.sh */,
+				D0CCF83E39CFDBC48B65E29D8E45E2EE /* Pods-walleeDemo-Info.plist */,
+				193B74886616025C664143A30BDFED36 /* Pods-walleeDemo-resources.sh */,
+				052B173CE41F43385A7FBB3D726F9CF6 /* Pods-walleeDemo-umbrella.h */,
+				4E3C50BB120BA893A8453CC2EF733761 /* Pods-walleeDemo.debug.xcconfig */,
+				58C08D785E73E223B43018F3C72BA27E /* Pods-walleeDemo.release.xcconfig */,
+			);
+			name = "Pods-walleeDemo";
+			path = "Target Support Files/Pods-walleeDemo";
 			sourceTree = "<group>";
 		};
 		D4E20B4B994E33EFA3FCC950C34E33D4 /* AlertToast */ = {
@@ -387,17 +406,6 @@
 			);
 			name = AlertToast;
 			path = AlertToast;
-			sourceTree = "<group>";
-		};
-		E3CE6A878F63EF23C56C43D39B055DDD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				A50F036BE0BFE618C67FA52B80377F3B /* AlertToast */,
-				F315EAAB337C411DBBC9A6E90EA759E6 /* Pods-OnlineStore */,
-				4E75DE786AD71914B168EAAA89EADF60 /* WalleePaymentSdk-WalleePayment */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F2E790EFC152AF315E1C8A8CE4F41E78 /* Support Files */ = {
@@ -415,14 +423,6 @@
 			path = "../Target Support Files/AlertToast";
 			sourceTree = "<group>";
 		};
-		F590B32F5AAC36183FD310C73B35F162 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A35EC2E0C69503DDFD396BFACF9302C9 /* Pods-OnlineStore */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -434,11 +434,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		941776D621B7D09CF11121EB7D102053 /* Headers */ = {
+		A3CFCB6CCBECDFD1B9B485FF63D32053 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				550058C9A18189DBB1016742AB992558 /* Pods-OnlineStore-umbrella.h in Headers */,
+				E64309394FE7E1DE96903A23778F304F /* Pods-walleeDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,25 +470,25 @@
 			productReference = 4E75DE786AD71914B168EAAA89EADF60 /* WalleePaymentSdk-WalleePayment */;
 			productType = "com.apple.product-type.bundle";
 		};
-		50010D627ABEBF65F2F3C0848416FC7E /* Pods-OnlineStore */ = {
+		B2F8B1F051D4E99053079C53B938F875 /* Pods-walleeDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6C063E34E2F9C12220176936A4443A7 /* Build configuration list for PBXNativeTarget "Pods-OnlineStore" */;
+			buildConfigurationList = 0147A103291751352990586E44CF28E0 /* Build configuration list for PBXNativeTarget "Pods-walleeDemo" */;
 			buildPhases = (
-				941776D621B7D09CF11121EB7D102053 /* Headers */,
-				1D5035380306E04CDEF973E131CC935F /* Sources */,
-				015109765373DF7A1C30E69E20B2BC97 /* Frameworks */,
-				B62FEB1DBB3970BAA994E4E8069C45FF /* Resources */,
+				A3CFCB6CCBECDFD1B9B485FF63D32053 /* Headers */,
+				6AF2E361B16F5D38D4CC02B7E2D4A121 /* Sources */,
+				A40CDD90E1578E498F31496BB7EA207D /* Frameworks */,
+				32E0086B8BF401979049B2D6FB305B8E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C182C0C7CA23E1728E32E2B9C14EB20F /* PBXTargetDependency */,
-				51BD1251FC899E8E95FE4C9514CD21EF /* PBXTargetDependency */,
-				F241C7A52E598052D06346D7D20AB1D0 /* PBXTargetDependency */,
+				EE888F56377DBF8CC1E0559121CF1D0A /* PBXTargetDependency */,
+				27EBD2953F8C0B894CCE1BD563368DA2 /* PBXTargetDependency */,
+				69CE2619C519BC163C203CAD428F14A0 /* PBXTargetDependency */,
 			);
-			name = "Pods-OnlineStore";
-			productName = Pods_OnlineStore;
-			productReference = F315EAAB337C411DBBC9A6E90EA759E6 /* Pods-OnlineStore */;
+			name = "Pods-walleeDemo";
+			productName = Pods_walleeDemo;
+			productReference = 0D6BDDFAA0D77C467066BCC2658514A0 /* Pods-walleeDemo */;
 			productType = "com.apple.product-type.framework";
 		};
 		BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */ = {
@@ -545,13 +545,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E3CE6A878F63EF23C56C43D39B055DDD /* Products */;
+			productRefGroup = 6996CC07C4118FF461AF789783853DF2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
 				BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */,
-				50010D627ABEBF65F2F3C0848416FC7E /* Pods-OnlineStore */,
+				B2F8B1F051D4E99053079C53B938F875 /* Pods-walleeDemo */,
 				3E00BEEB166D657C3AE5E94956855829 /* WalleePaymentSdk */,
 				06AF07847D09E5BE7E5729DDFD986094 /* WalleePaymentSdk-WalleePayment */,
 			);
@@ -567,6 +567,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32E0086B8BF401979049B2D6FB305B8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		565FD2058706F22D2347B30C65280F30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,13 +582,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		59FC49F4186BE3B64D14966824FEF367 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B62FEB1DBB3970BAA994E4E8069C45FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -615,14 +615,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1D5035380306E04CDEF973E131CC935F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C380ED2E40326D8C6B0DBDA5AAA42EE0 /* Pods-OnlineStore-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +663,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6AF2E361B16F5D38D4CC02B7E2D4A121 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17AE03F59550B7F541E2318F6CDEBEC3 /* Pods-walleeDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E433AAB9933A759630771F55C9A60EBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,11 +685,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		51BD1251FC899E8E95FE4C9514CD21EF /* PBXTargetDependency */ = {
+		27EBD2953F8C0B894CCE1BD563368DA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AlertToast;
 			target = BD9F52E07CA8CCC9E5112A7D8C1CE821 /* AlertToast */;
-			targetProxy = 56E520F89174D8B9664FA32333E67EE9 /* PBXContainerItemProxy */;
+			targetProxy = 6797CB51409630BB6AD2850A0F34EBD5 /* PBXContainerItemProxy */;
+		};
+		69CE2619C519BC163C203CAD428F14A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WalleePaymentSdk;
+			target = 3E00BEEB166D657C3AE5E94956855829 /* WalleePaymentSdk */;
+			targetProxy = C6952E1C29C113F8ECDF6E8601FBD4C9 /* PBXContainerItemProxy */;
 		};
 		A19795D3424AA20BE0E5AD5CB887E2E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -697,17 +703,11 @@
 			target = 06AF07847D09E5BE7E5729DDFD986094 /* WalleePaymentSdk-WalleePayment */;
 			targetProxy = 1B0E34BC6E4363FFC26999D4B7F73EFF /* PBXContainerItemProxy */;
 		};
-		C182C0C7CA23E1728E32E2B9C14EB20F /* PBXTargetDependency */ = {
+		EE888F56377DBF8CC1E0559121CF1D0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = B26A86415434A966DBDAF0B3E111D77F /* PBXContainerItemProxy */;
-		};
-		F241C7A52E598052D06346D7D20AB1D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = WalleePaymentSdk;
-			target = 3E00BEEB166D657C3AE5E94956855829 /* WalleePaymentSdk */;
-			targetProxy = 6C3629C759430712EC5AEF9E29F9B1BB /* PBXContainerItemProxy */;
+			targetProxy = B148DED875301A1AF524674D07FED02E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -831,9 +831,9 @@
 			};
 			name = Debug;
 		};
-		95706F00D711BF335A995A74B2194805 /* Release */ = {
+		951AC9E5325730E2B6F9D059AC89C37D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B70B97421E029A9CACE6C45B3B54F51 /* Pods-OnlineStore.release.xcconfig */;
+			baseConfigurationReference = 4E3C50BB120BA893A8453CC2EF733761 /* Pods-walleeDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -845,7 +845,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -854,7 +854,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -863,11 +863,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -930,43 +929,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
-		};
-		9E8DE978B9A0B7ED2B23D902BA047DE8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6CBDFCD9C8717FC7732211C68B06320 /* Pods-OnlineStore.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OnlineStore/Pods-OnlineStore.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		AE1ECD57F5B851A099EAFB3AE2402BD4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1056,6 +1018,44 @@
 			};
 			name = Debug;
 		};
+		C4A889ADCB112BA59F17BDA9F4A2C32F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58C08D785E73E223B43018F3C72BA27E /* Pods-walleeDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F3657E9AF2120EFCE0A4CF65D09456F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4A6CBE635CE43A456E855CF0659D676 /* WalleePaymentSdk.debug.xcconfig */;
@@ -1129,6 +1129,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0147A103291751352990586E44CF28E0 /* Build configuration list for PBXNativeTarget "Pods-walleeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				951AC9E5325730E2B6F9D059AC89C37D /* Debug */,
+				C4A889ADCB112BA59F17BDA9F4A2C32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		058CF4B13CD220E4F99FC2BAEA8B57E3 /* Build configuration list for PBXNativeTarget "AlertToast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1170,15 +1179,6 @@
 			buildConfigurations = (
 				B7D9E7CD650F798EC835C67DACFEBC4F /* Debug */,
 				F5F3306F2C09AB4B623C805497E28D51 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E6C063E34E2F9C12220176936A4443A7 /* Build configuration list for PBXNativeTarget "Pods-OnlineStore" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9E8DE978B9A0B7ED2B23D902BA047DE8 /* Debug */,
-				95706F00D711BF335A995A74B2194805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

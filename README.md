@@ -9,8 +9,8 @@ Online Shop is an IOS SwiftUI application intended to showcase he integration of
 
 ### Requirements
 
-Xcode 12 or above
-Wallee account
+- Xcode 12 or above
+- Wallee account
 
 ### Set up Wallee
 
@@ -31,7 +31,7 @@ In order to run the project on you local machine, please do the following steps:
 In order to login into the application you will need the following information:
 
 - Space ID
-- Application ID
+- Application User ID
 - Token
   ![App screenshots](Documentation/Images/auth.png)
 
