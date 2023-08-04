@@ -20,24 +20,16 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     var userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""
     
     @Published var token: String = ""
-    @Published var resultCallback:String = ""
+    @Published var resultCallback: String = ""
     @Published var presentedModal: Bool = false
     @Published var toast: Toast = Toast(shouldShow: false, type: .complete(Color.green), title: nil)
     
-    var onPaymentComplete: () -> Void
-    init(onPaymentComplete: @escaping () -> Void) {
-        self.onPaymentComplete = onPaymentComplete
-    }
 
     func paymentResult(paymentResultMessage: PaymentResult) {
         print("PAYMENT RESULT: ", paymentResultMessage.code)
         self.presentedModal = false
         self.toast = Toast(shouldShow: true, type: paymentResultMessage.code == .COMPLETED ? .complete(Color.green) : .error(Color.red), title: paymentResultMessage.code.rawValue)
         self.resultCallback = paymentResultMessage.code.rawValue
-        
-        if (paymentResultMessage.code == .COMPLETED) {
-            onPaymentComplete()
-        }
             
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.toast = Toast(shouldShow: false, type: .complete(Color.green))
