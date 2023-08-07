@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var path: NavigationPath
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
 
         ZStack {
             Color.theme.background.ignoresSafeArea()
@@ -51,7 +52,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            HomeView().environmentObject(CartManager())
+            HomeView(path: .constant(NavigationPath())).environmentObject(CartManager())
         }
     }
 }
