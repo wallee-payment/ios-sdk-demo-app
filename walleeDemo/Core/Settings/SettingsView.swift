@@ -59,13 +59,14 @@ struct SettingsView: View {
                     
                     HStack {
                         Spacer()
-                            NavigationLink(destination: UserDetailsView(onDataSaved: {
+                        NavigationLink(value: "Change") {
+                                Text("Change")
+                            }.navigationDestination(for: String.self) {
+                            _ in UserDetailsView(onDataSaved: {
                                 spaceId = Foundation.UserDefaults.standard.string(forKey: "spaceId")
                                 userId = Foundation.UserDefaults.standard.string(forKey: "userId")
                                 userToken = Foundation.UserDefaults.standard.string(forKey: "userToken")
                             })
-                            ) {
-                                Text("Change")
                             }
                         }
                    

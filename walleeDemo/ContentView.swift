@@ -18,7 +18,6 @@ struct ContentView: View {
     
     @State var merchantDataSaved: Bool = false
     @State private var selection = 0
-    let tabIndexes = ["home": 0, "cart": 1, "settings": 2]
     @State var homeNavPath = NavigationPath()
     @State var settingsNavPath = NavigationPath()
     
@@ -30,12 +29,11 @@ struct ContentView: View {
             get: { self.selection },
             set: {
                 if ($0 == self.selection) {
-                    print("++++++++++++++++++", $0, settingsNavPath.isEmpty, homeNavPath.isEmpty)
-                    if($0 == tabIndexes["home"] && !homeNavPath.isEmpty) {
-                        homeNavPath.removeLast()
+                    if($0 == 0) {
+                        homeNavPath = NavigationPath()
                     }
-                    if($0 == tabIndexes["settings"] && !settingsNavPath.isEmpty) {
-                        settingsNavPath.removeLast()
+                    if($0 == 2) {
+                        settingsNavPath = NavigationPath()
                     }
                     }
                 self.selection = $0
@@ -56,28 +54,31 @@ struct ContentView: View {
                 })
             } else {
                 TabView(selection: handler) {
-                    HomeView(path: $homeNavPath)
-                        .tabItem {
-                            Label("", systemImage: "text.justify")
-                        }
-                        .tag(tabIndexes["home"])
+                    NavigationView {
+                        HomeView(path: $homeNavPath)
+                    }
+                    .tabItem {
+                        Label("", systemImage: "text.justify")
+                    }
+                    .tag(0)
                     
-                    ShoppingCartView()
-                        .tabItem {
-                            Label("", systemImage: "bag")
-                                .environment(\.symbolVariants, .none)
-                        }
-                        .badge(cartManager.totalAmount > 0 ? String(cartManager.totalAmount) : nil)
-                        .tag(tabIndexes["cart"])
+                    NavigationView {
+                        ShoppingCartView()
+                    }
+                    .tabItem {
+                        Label("", systemImage: "bag").environment(\.symbolVariants, .none)
+                    }
+                    .badge(cartManager.totalAmount > 0 ? String(cartManager.totalAmount) : nil)
+                    .tag(1)
                     
-                    SettingsView(path: $settingsNavPath)
-                        .tabItem {
-                            Label("", systemImage: "gearshape")
-                        }
-                        .tag(tabIndexes["settings"])
+                    NavigationView {
+                        SettingsView(path: $settingsNavPath)
+                    }
+                    .tabItem {
+                        Label("", systemImage: "gearshape")
+                    }
+                    .tag(2)
                 }
-                
-                
             }
         }
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var path: NavigationPath
+    
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
