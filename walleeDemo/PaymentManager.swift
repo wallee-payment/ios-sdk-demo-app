@@ -26,7 +26,6 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     
 
     func paymentResult(paymentResultMessage: PaymentResult) {
-        print("PAYMENT RESULT: ", paymentResultMessage.code)
         self.presentedModal = false
         self.toast = Toast(shouldShow: true, type: paymentResultMessage.code == .COMPLETED ? .complete(Color.green) : .error(Color.red), title: paymentResultMessage.code.rawValue)
         self.resultCallback = paymentResultMessage.code.rawValue
