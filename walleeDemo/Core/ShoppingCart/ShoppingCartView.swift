@@ -11,10 +11,7 @@ import AlertToast
 
 struct ShoppingCartView: View {
     @EnvironmentObject var cartManager: CartManager
-    @StateObject private var paymentManager: PaymentManager = PaymentManager(onPaymentComplete: {
-        print(">>paymentResult")
-        //TO DO: cartManager.removeAllProducts()
-    })
+    @StateObject private var paymentManager: PaymentManager = PaymentManager()
 
     var body: some View {
         ZStack {
@@ -75,6 +72,10 @@ struct ShoppingCartView: View {
         .toast(isPresenting: $paymentManager.toast.shouldShow){
             AlertToast(type: $paymentManager.toast.type.wrappedValue, subTitle: $paymentManager.toast.title.wrappedValue, style: .style(backgroundColor: Color.theme.shadow)
             )}
+        .onChange(of: paymentManager.resultCallback) { result in
+            if(result == PaymentResultEnum.COMPLETED.rawValue) {
+                cartManager.removeAllProducts()
+        }
     }
 }
 
@@ -83,6 +84,7 @@ struct ShoppingCartView_Previews: PreviewProvider {
         NavigationStack {
             ShoppingCartView()
                 .environmentObject(CartManager())
+            }
         }
     }
 }
