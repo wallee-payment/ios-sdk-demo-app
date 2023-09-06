@@ -30,10 +30,10 @@ struct ContentView: View {
             set: {
                 if ($0 == self.selection) {
                     if($0 == 0) {
-                        homeNavPath = NavigationPath()
+                        homeNavPath.removeLast(homeNavPath.count)
                     }
                     if($0 == 2) {
-                        settingsNavPath = NavigationPath()
+                        settingsNavPath.removeLast(settingsNavPath.count)
                     }
                     }
                 self.selection = $0
