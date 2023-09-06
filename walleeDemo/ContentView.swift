@@ -9,7 +9,6 @@ import SwiftUI
 import AlertToast
 
 struct ContentView: View {
-
     @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var launchViewManager: LaunchViewManager
     
@@ -18,10 +17,28 @@ struct ContentView: View {
     var userToken: String = Foundation.UserDefaults.standard.string(forKey: "userToken") ?? ""
     
     @State var merchantDataSaved: Bool = false
+    @State private var selection = 0
+    @State var homeNavPath = NavigationPath()
+    @State var settingsNavPath = NavigationPath()
     
     init() {
         UITabBar.appearance().barTintColor = UIColor(Color.theme.background)
        }
+
+    var handler: Binding<Int> { Binding(
+            get: { self.selection },
+            set: {
+                if ($0 == self.selection) {
+                    if($0 == 0) {
+                        homeNavPath.removeLast(homeNavPath.count)
+                    }
+                    if($0 == 2) {
+                        settingsNavPath.removeLast(settingsNavPath.count)
+                    }
+                    }
+                self.selection = $0
+            }
+        )}
 
     var body: some View {
         if launchViewManager.isLaunchViewActive {
@@ -36,26 +53,32 @@ struct ContentView: View {
                     }
                 })
             } else {
-                TabView() {
-                    HomeView()
-                        .tabItem {
-                            Label("", systemImage: "text.justify")
-                        }
-                        .tag("Home")
+                TabView(selection: handler) {
+                    NavigationView {
+                        HomeView(path: $homeNavPath)
+                    }
+                    .tabItem {
+                        Label("", systemImage: "text.justify")
+                    }
+                    .tag(0)
                     
-                    ShoppingCartView()
-                        .tabItem {
-                            Label("", systemImage: "bag")
-                                .environment(\.symbolVariants, .none)
-                        }
-                        .badge(cartManager.totalAmount > 0 ? String(cartManager.totalAmount) : nil)
+                    NavigationView {
+                        ShoppingCartView()
+                    }
+                    .tabItem {
+                        Label("", systemImage: "bag").environment(\.symbolVariants, .none)
+                    }
+                    .badge(cartManager.totalAmount > 0 ? String(cartManager.totalAmount) : nil)
+                    .tag(1)
                     
-                    SettingsView()
-                        .tabItem {
-                            Label("", systemImage: "gearshape")
-                        }
+                    NavigationView {
+                        SettingsView(path: $settingsNavPath)
+                    }
+                    .tabItem {
+                        Label("", systemImage: "gearshape")
+                    }
+                    .tag(2)
                 }
-                
             }
         }
     }

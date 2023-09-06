@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Binding var path: NavigationPath
+    
     @State private var isShowingDetailView = true
     @State private var isDarkMode = false
     
@@ -16,7 +18,7 @@ struct SettingsView: View {
     @State private var userToken: String? = Foundation.UserDefaults.standard.string(forKey: "userToken")
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             ZStack {
                 Color.theme.background.ignoresSafeArea()
                 VStack {
@@ -57,13 +59,14 @@ struct SettingsView: View {
                     
                     HStack {
                         Spacer()
-                            NavigationLink(destination: UserDetailsView(onDataSaved: {
+                        NavigationLink(value: "Change") {
+                                Text("Change")
+                            }.navigationDestination(for: String.self) {
+                            _ in UserDetailsView(onDataSaved: {
                                 spaceId = Foundation.UserDefaults.standard.string(forKey: "spaceId")
                                 userId = Foundation.UserDefaults.standard.string(forKey: "userId")
                                 userToken = Foundation.UserDefaults.standard.string(forKey: "userToken")
                             })
-                            ) {
-                                Text("Change")
                             }
                         }
                    
@@ -73,12 +76,14 @@ struct SettingsView: View {
                     //     .padding().bold()
                 }.padding()
             }
-        }.navigationViewStyle(.stack)
+        }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        NavigationStack {
+            SettingsView(path: .constant(NavigationPath()))
+        }
     }
 }
