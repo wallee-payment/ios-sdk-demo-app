@@ -32,6 +32,7 @@
 		79D488DA29C301E2004F2AE1 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D488D929C301E2004F2AE1 /* CartItem.swift */; };
 		79D74A102A308BA0004ED9D3 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4C0972A27533A002BBD44 /* Transaction.swift */; };
 		79DBF1F329B1E77B003C8D0C /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */; };
+		79ECFFD92AB08CB1007F7AB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79ECFFD82AB08CB1007F7AB5 /* GoogleService-Info.plist */; };
 		B766B4B66B958ABBC29146D7 /* Pods_walleeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C67855DAADD515F5C0CCA1F5 /* Pods_walleeDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		79C7066A2A2E42640060E8C5 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		79D488D929C301E2004F2AE1 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
+		79ECFFD82AB08CB1007F7AB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79F4C0972A27533A002BBD44 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		C67855DAADD515F5C0CCA1F5 /* Pods_walleeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_walleeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 		790020EC29AF649A00DCE75B = {
 			isa = PBXGroup;
 			children = (
+				79ECFFD82AB08CB1007F7AB5 /* GoogleService-Info.plist */,
 				7977CACC2A3B3C3D0006D309 /* Documentation */,
 				790020F729AF649A00DCE75B /* walleeDemo */,
 				790020F629AF649A00DCE75B /* Products */,
@@ -303,6 +306,7 @@
 				790020F329AF649A00DCE75B /* Resources */,
 				FDE02417C9C6C0685A990DF7 /* [CP] Embed Pods Frameworks */,
 				1123E6E603887C6A44CB43F4 /* [CP] Copy Pods Resources */,
+				79ECFFDB2AB08CC0007F7AB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -353,6 +357,7 @@
 			files = (
 				7900210029AF649D00DCE75B /* Preview Assets.xcassets in Resources */,
 				790020FD29AF649D00DCE75B /* Assets.xcassets in Resources */,
+				79ECFFD92AB08CB1007F7AB5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +380,28 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		79ECFFDB2AB08CC0007F7AB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		9173666B43EC77FB1DC16F48 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -573,6 +600,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"walleeDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;

@@ -10,6 +10,7 @@ target 'walleeDemo' do
   pod 'AlertToast'
   # pod 'Wormholy', :configurations => ['Debug']
   pod 'Alamofire'
+  pod 'FirebaseCrashlytics'
 end
 
 # fix running project on xcod 15
