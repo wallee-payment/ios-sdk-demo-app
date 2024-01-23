@@ -6,7 +6,8 @@ target 'walleeDemo' do
   use_frameworks!
 
   # Pods for walleeDemo
-  pod 'WalleePaymentSdk', '1.1.0', :source => 'https://github.com/wallee-payment/ios-mobile-sdk-spec'
+  pod 'WalleePaymentSdk', '1.2.0'
+
   pod 'AlertToast'
   # pod 'Wormholy', :configurations => ['Debug']
   pod 'Alamofire'
