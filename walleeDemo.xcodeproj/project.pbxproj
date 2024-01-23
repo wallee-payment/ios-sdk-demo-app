@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C5ABD996A885E031035937 /* Pods_walleeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB340C4946C2548EDE6153E /* Pods_walleeDemo.framework */; };
 		790020F929AF649A00DCE75B /* walleeDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790020F829AF649A00DCE75B /* walleeDemoApp.swift */; };
 		790020FD29AF649D00DCE75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790020FC29AF649D00DCE75B /* Assets.xcassets */; };
 		7900210029AF649D00DCE75B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790020FF29AF649D00DCE75B /* Preview Assets.xcassets */; };
@@ -32,12 +33,10 @@
 		79D488DA29C301E2004F2AE1 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D488D929C301E2004F2AE1 /* CartItem.swift */; };
 		79D74A102A308BA0004ED9D3 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4C0972A27533A002BBD44 /* Transaction.swift */; };
 		79DBF1F329B1E77B003C8D0C /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */; };
-		B766B4B66B958ABBC29146D7 /* Pods_walleeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C67855DAADD515F5C0CCA1F5 /* Pods_walleeDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		051A86F5DE20CF3F22891497 /* Pods-walleeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walleeDemo.debug.xcconfig"; path = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		1FE62B5459EA043669BEFC4C /* Pods-walleeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walleeDemo.release.xcconfig"; path = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo.release.xcconfig"; sourceTree = "<group>"; };
+		1DB340C4946C2548EDE6153E /* Pods_walleeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_walleeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		790020F529AF649A00DCE75B /* walleeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = walleeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		790020F829AF649A00DCE75B /* walleeDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walleeDemoApp.swift; sourceTree = "<group>"; };
 		790020FC29AF649D00DCE75B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,9 +63,10 @@
 		79D488D929C301E2004F2AE1 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		79F4C0972A27533A002BBD44 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B2AF844CC8C2007061BBB95C /* Pods-walleeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walleeDemo.debug.xcconfig"; path = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B9AD99DF2B5EBF3900EFA35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9EF83FF2B5FC3B600162834 /* walleeDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = walleeDemo.entitlements; sourceTree = "<group>"; };
-		C67855DAADD515F5C0CCA1F5 /* Pods_walleeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_walleeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D89337E1FCEA4C452CEBD6 /* Pods-walleeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walleeDemo.release.xcconfig"; path = "Target Support Files/Pods-walleeDemo/Pods-walleeDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +74,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B766B4B66B958ABBC29146D7 /* Pods_walleeDemo.framework in Frameworks */,
+				03C5ABD996A885E031035937 /* Pods_walleeDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29D2254C9BDB23BFC4342B13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DB340C4946C2548EDE6153E /* Pods_walleeDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		790020EC29AF649A00DCE75B = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +96,7 @@
 				790020F729AF649A00DCE75B /* walleeDemo */,
 				790020F629AF649A00DCE75B /* Products */,
 				C4233E123573BA67FF76DB94 /* Pods */,
-				CCFA438342DF8DA7A46237F8 /* Frameworks */,
+				29D2254C9BDB23BFC4342B13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,18 +288,10 @@
 		C4233E123573BA67FF76DB94 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				051A86F5DE20CF3F22891497 /* Pods-walleeDemo.debug.xcconfig */,
-				1FE62B5459EA043669BEFC4C /* Pods-walleeDemo.release.xcconfig */,
+				B2AF844CC8C2007061BBB95C /* Pods-walleeDemo.debug.xcconfig */,
+				D4D89337E1FCEA4C452CEBD6 /* Pods-walleeDemo.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		CCFA438342DF8DA7A46237F8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C67855DAADD515F5C0CCA1F5 /* Pods_walleeDemo.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,12 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7900210329AF649D00DCE75B /* Build configuration list for PBXNativeTarget "walleeDemo" */;
 			buildPhases = (
-				9173666B43EC77FB1DC16F48 /* [CP] Check Pods Manifest.lock */,
+				FEE9D4CAB6198E40A01FC1E8 /* [CP] Check Pods Manifest.lock */,
 				790020F129AF649A00DCE75B /* Sources */,
 				790020F229AF649A00DCE75B /* Frameworks */,
 				790020F329AF649A00DCE75B /* Resources */,
-				FDE02417C9C6C0685A990DF7 /* [CP] Embed Pods Frameworks */,
-				1123E6E603887C6A44CB43F4 /* [CP] Copy Pods Resources */,
+				20AFC263AB6A62DF2FBD6E04 /* [CP] Embed Pods Frameworks */,
+				34528A29FE76B35C9DE09451 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -363,7 +363,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1123E6E603887C6A44CB43F4 /* [CP] Copy Pods Resources */ = {
+		20AFC263AB6A62DF2FBD6E04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34528A29FE76B35C9DE09451 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,7 +397,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9173666B43EC77FB1DC16F48 /* [CP] Check Pods Manifest.lock */ = {
+		FEE9D4CAB6198E40A01FC1E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,23 +417,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FDE02417C9C6C0685A990DF7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -571,7 +571,7 @@
 		};
 		7900210429AF649D00DCE75B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 051A86F5DE20CF3F22891497 /* Pods-walleeDemo.debug.xcconfig */;
+			baseConfigurationReference = B2AF844CC8C2007061BBB95C /* Pods-walleeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -582,6 +582,7 @@
 				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = walleeDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "wallee Demo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -593,7 +594,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Wallee.walleeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -604,7 +605,7 @@
 		};
 		7900210529AF649D00DCE75B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FE62B5459EA043669BEFC4C /* Pods-walleeDemo.release.xcconfig */;
+			baseConfigurationReference = D4D89337E1FCEA4C452CEBD6 /* Pods-walleeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -615,6 +616,7 @@
 				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = walleeDemo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "wallee Demo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -626,7 +628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Wallee.walleeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
