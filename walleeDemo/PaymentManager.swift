@@ -135,6 +135,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
 
     func onOpenSdkPress(cartProducts: [CartItem]){
         let wallee = WalleePaymentSdk(eventObserver: self)
+        wallee.configureApplePay(merchantId: "merchant.com.wallee.demo.app")
         self.toast = Toast(shouldShow: true, type: .loading)
          createTransaction(cartProducts: cartProducts)
     }
