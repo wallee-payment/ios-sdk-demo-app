@@ -61,7 +61,6 @@ struct ShoppingCartView: View {
                         .padding([.top, .bottom], 5)
                         .foregroundColor(Color.theme.background)
                 }
-                .presentModalView(isPresented: $paymentManager.presentedModal, token: $paymentManager.token, animationType: .BUBBLE)
                 .buttonStyle(.borderedProminent)
                 .disabled(cartManager.products.count <= 0)
                 .buttonBorderShape(.roundedRectangle(radius: 0.0))
@@ -72,7 +71,7 @@ struct ShoppingCartView: View {
         .toast(isPresenting: $paymentManager.toast.shouldShow){
             AlertToast(type: $paymentManager.toast.type.wrappedValue, subTitle: $paymentManager.toast.title.wrappedValue, style: .style(backgroundColor: Color.theme.shadow)
             )}
-        .onChange(of: paymentManager.resultCallback) { result in
+        .onChange(of: paymentManager.result) { result in
             if(result == PaymentResultEnum.COMPLETED.rawValue) {
                 cartManager.removeAllProducts()
         }

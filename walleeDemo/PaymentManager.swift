@@ -20,22 +20,21 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     var userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""
     
     @Published var token: String = ""
-    @Published var resultCallback: String = ""
-    @Published var presentedModal: Bool = false
+    @Published var result: String = ""
     @Published var toast: Toast = Toast(shouldShow: false, type: .complete(Color.green), title: nil)
+    @Published var wallee: WalleePaymentSdk?
     
 
     func paymentResult(paymentResultMessage: PaymentResult) {
-        self.presentedModal = false
         self.toast = Toast(shouldShow: true, type: paymentResultMessage.code == .COMPLETED ? .complete(Color.green) : .error(Color.red), title: paymentResultMessage.code.rawValue)
-        self.resultCallback = paymentResultMessage.code.rawValue
+        self.result = paymentResultMessage.code.rawValue
             
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.toast = Toast(shouldShow: false, type: .complete(Color.green))
         }
     }
     
-    func createTransaction(cartProducts: [CartItem]) {
+    func createTransaction(cartProducts: [CartItem], completion: @escaping () -> Void) {
         spaceId = UserDefaults.standard.string(forKey: "spaceId") ?? ""
         userId = UserDefaults.standard.string(forKey: "userId") ?? ""
         userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""
@@ -59,6 +58,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
              }
         let requestData = [
             "currency": cartProducts[0].product.currency,
+            "language": "en-US",
             "lineItems": listItems
         ] as [String : Any]
         
@@ -67,7 +67,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
                 case .success(let data):
                     do {
                         let res = try JSONDecoder().decode(TransactionResponse.self, from: data)
-                        self.getTransactionToken(transactionId: res.id)
+                        self.getTransactionToken(transactionId: res.id, completion: completion)
                     } catch {
                         self.toast = Toast(shouldShow: false, type: .error(Color.red))
                         self.toast = Toast(shouldShow: true, type: .error(Color.red), title: "Transaction failed, check user credentials")
@@ -104,7 +104,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
         return [headerBase64, payloadBase64, signatureBase64].joined(separator: ".")
     }
     
-    func getTransactionToken(transactionId: Int) {
+    func getTransactionToken(transactionId: Int, completion: @escaping () -> Void) {
         let path = "/api/transaction/createTransactionCredentials?spaceId=\(self.spaceId)&id=\(transactionId)"
 
         // headers
@@ -113,8 +113,8 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
             "Authorization": "Bearer \(jwt)"
         ]
         
-        AF.request("\(baseUrl)\(path)", method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200 ..< 699).responseData { response in
-            switch response.result {
+        AF.request("\(self.baseUrl)\(path)", method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200 ..< 699).responseData { response in
+                switch response.result {
                 case .success(let data):
                     do {
                         guard let response = String(data: data, encoding: .utf8) else {
@@ -122,22 +122,25 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
                             return
                         }
                         self.token = response
-                        self.presentedModal = true
+                        completion()
                         self.toast = Toast(shouldShow: false, type: .error(Color.red))
                     }
                 case .failure(let error):
                     print(error)
-            }
+                }
         }
 
     }
     
 
     func onOpenSdkPress(cartProducts: [CartItem]){
-        let wallee = WalleePaymentSdk(eventObserver: self)
-        wallee.configureApplePay(merchantId: "merchant.com.wallee.demo.app")
+        wallee = WalleePaymentSdk(eventObserver: self)
+        guard let wallee = wallee else { return }
+        wallee.configureApplePay(merchantId: "merchant.wallee.demo.app")
         self.toast = Toast(shouldShow: true, type: .loading)
-         createTransaction(cartProducts: cartProducts)
+        createTransaction(cartProducts: cartProducts) {
+            wallee.launchPayment(token: self.token, isSwiftUI: true)
+        }
     }
 }
 

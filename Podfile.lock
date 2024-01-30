@@ -2,27 +2,27 @@ PODS:
   - Alamofire (5.8.1)
   - AlertToast (1.3.9)
   - PaymentResources (1.0.0)
-  - WalleePaymentSdk (1.2.1):
+  - WalleePaymentSdkStaging (1.2.2):
     - PaymentResources (= 1.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlertToast
-  - WalleePaymentSdk (= 1.2.1)
+  - WalleePaymentSdkStaging (= 1.2.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlertToast
     - PaymentResources
-    - WalleePaymentSdk
+    - WalleePaymentSdkStaging
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
   PaymentResources: 1396e2fcdb21ef3ae769250b0f072adab1c5b90c
-  WalleePaymentSdk: bdf2a531075134193ae1c7b0761299e6cb411e41
+  WalleePaymentSdkStaging: 0adf360a692a2bb8f1896b17ee57494800f4513f
 
-PODFILE CHECKSUM: 311d045eb3c91ab66c8ffed0b7a361459f2a03af
+PODFILE CHECKSUM: b58bf2d8f4cdadb357ff1a4ac2f390e510b3c85a
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.12.1

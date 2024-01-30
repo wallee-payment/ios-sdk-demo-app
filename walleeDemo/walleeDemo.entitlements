@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.in-app-payments</key>
 	<array>
-		<string>merchant.com.wallee.demo.app</string>
+		<string>merchant.wallee.demo.app</string>
 	</array>
 </dict>
 </plist>
