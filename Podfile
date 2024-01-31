@@ -6,7 +6,7 @@ target 'walleeDemo' do
   use_frameworks!
 
   # Pods for walleeDemo
-  pod 'WalleePaymentSdk', '1.2.1'
+  pod 'WalleePaymentSdk', '1.2.2'
 
   pod 'AlertToast'
   # pod 'Wormholy', :configurations => ['Debug']

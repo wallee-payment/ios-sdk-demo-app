@@ -78,7 +78,7 @@ struct ContentView: View {
                         Label("", systemImage: "gearshape")
                     }
                     .tag(2)
-                }
+                }.navigationViewStyle(.stack)
             }
         }
     }
