@@ -7,13 +7,13 @@
 
 import Foundation
 import UIKit
-import WalleePaymentSdk
+import PostFinanceCheckoutSdk
 import CryptoKit
 import AlertToast
 import SwiftUI
 import Alamofire
 
-class PaymentManager: ObservableObject, WalleePaymentResultObserver {
+class PaymentManager: ObservableObject, PostFinanceCheckoutResultObserver {
     let baseUrl = "https://app-wallee.com"
     var spaceId = UserDefaults.standard.string(forKey: "spaceId") ?? ""
     var userId = UserDefaults.standard.string(forKey: "userId") ?? ""
@@ -22,7 +22,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     @Published var token: String = ""
     @Published var result: String = ""
     @Published var toast: Toast = Toast(shouldShow: false, type: .complete(Color.green), title: nil)
-    @Published var wallee: WalleePaymentSdk?
+    @Published var wallee: PostFinanceCheckoutSdk?
     
 
     func paymentResult(paymentResultMessage: PaymentResult) {
@@ -134,7 +134,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     
 
     func onOpenSdkPress(cartProducts: [CartItem]){
-        wallee = WalleePaymentSdk(eventObserver: self)
+        wallee = PostFinanceCheckoutSdk(eventObserver: self)
         guard let wallee = wallee else { return }
         wallee.configureApplePay(merchantId: "merchant.wallee.demo.app")
         self.toast = Toast(shouldShow: true, type: .loading)

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import WalleePaymentSdk
+import PostFinanceCheckoutSdk
 
 enum ColorSchemeSetting: String, CaseIterable {
     case light, dark, system
@@ -33,7 +33,7 @@ struct walleeDemoApp: App {
         WindowGroup {
                 ContentView().environmentObject(CartManager()).environmentObject(LaunchViewManager())
                 .preferredColorScheme(selectedColorScheme).onOpenURL(perform: { url in
-                    let _ = WalleePaymentSdk.onHandleOpenURL(url: url)
+                    let _ = PostFinanceCheckoutSdk.onHandleOpenURL(url: url)
                 })
         }
     }

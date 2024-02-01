@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import WalleePaymentSdk
+import PostFinanceCheckoutSdk
 import AlertToast
 
 struct ShoppingCartView: View {
