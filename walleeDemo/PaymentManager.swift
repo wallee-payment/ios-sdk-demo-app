@@ -14,7 +14,7 @@ import SwiftUI
 import Alamofire
 
 class PaymentManager: ObservableObject, PostFinanceCheckoutResultObserver {
-    let baseUrl = "https://app-wallee.com"
+    let baseUrl = "https://checkout.postfinance.ch"
     var spaceId = UserDefaults.standard.string(forKey: "spaceId") ?? ""
     var userId = UserDefaults.standard.string(forKey: "userId") ?? ""
     var userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""

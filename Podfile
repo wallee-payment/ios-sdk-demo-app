@@ -6,7 +6,7 @@ target 'walleeDemo' do
   use_frameworks!
 
   # Pods for walleeDemo
-  pod 'PostFinanceCheckoutSdkStaging', '1.2.2'
+  pod 'PostFinanceCheckoutSdk', '1.2.2'
 
   pod 'AlertToast'
   # pod 'Wormholy', :configurations => ['Debug']
