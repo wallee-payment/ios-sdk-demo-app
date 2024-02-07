@@ -21,7 +21,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
   PaymentResources: 1396e2fcdb21ef3ae769250b0f072adab1c5b90c
-  PostFinanceCheckoutSdk: f421805bcc8f1789dd7d783162bfca54b8de7487
+  PostFinanceCheckoutSdk: d61657d5bd548177881379c90ff4c103368c307a
 
 PODFILE CHECKSUM: 00fb598f4b2af8a862ee289a33971e14039f2ab9
 
