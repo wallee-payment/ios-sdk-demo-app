@@ -137,6 +137,7 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
         wallee = WalleePaymentSdk(eventObserver: self)
         guard let wallee = wallee else { return }
         wallee.configureApplePay(merchantId: "merchant.wallee.demo.app")
+        wallee.configureDeepLink(deepLink: "twint-payment-w-demo-app")
         self.toast = Toast(shouldShow: true, type: .loading)
         createTransaction(cartProducts: cartProducts) {
             wallee.launchPayment(token: self.token, isSwiftUI: true)
