@@ -18,38 +18,6 @@
             endingLineNumber = "65"
             landmarkName = "createTransaction(cartProducts:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D9A37233-55DB-4084-A834-67C98A370B1B - 7c73cfd1e15ca88b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "walleeDemo.PaymentManager.createTransaction(cartProducts: Swift.Array&lt;walleeDemo.CartItem&gt;, completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "walleeDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukassalek/Documents/work/wallee/ios-sdk-demo-app/walleeDemo/PaymentManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "2676">
-               </Location>
-               <Location
-                  uuid = "D9A37233-55DB-4084-A834-67C98A370B1B - 2bbe23df5abc6838"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in walleeDemo.PaymentManager.createTransaction(cartProducts: Swift.Array&lt;walleeDemo.CartItem&gt;, completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "walleeDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukassalek/Documents/work/wallee/ios-sdk-demo-app/walleeDemo/PaymentManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "368">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
