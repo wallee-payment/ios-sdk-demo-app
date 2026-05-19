@@ -4,10 +4,6 @@ platform :ios, '13.0'
 target 'walleeDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for walleeDemo
-  pod 'WalleePaymentSdk', '1.3.0'
-
   pod 'AlertToast'
   # pod 'Wormholy', :configurations => ['Debug']
   pod 'Alamofire'

@@ -1,0 +1,15 @@
+{
+  "originHash" : "9282db9a38e444db41cee1bf2104221e0368f6d9b4e0f16485452d71440a49b6",
+  "pins" : [
+    {
+      "identity" : "ios-mobile-sdk-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-SPM",
+      "state" : {
+        "revision" : "3c136650bfbbd0e0c5f54363259b0ccdfd61418b",
+        "version" : "2.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

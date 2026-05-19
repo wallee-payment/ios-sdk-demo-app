@@ -33,6 +33,11 @@
 		79D488DA29C301E2004F2AE1 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D488D929C301E2004F2AE1 /* CartItem.swift */; };
 		79D74A102A308BA0004ED9D3 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4C0972A27533A002BBD44 /* Transaction.swift */; };
 		79DBF1F329B1E77B003C8D0C /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */; };
+		9C0FCEB32FBC63E600087E10 /* ReactBrownfield in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB22FBC63E600087E10 /* ReactBrownfield */; };
+		9C0FCEB52FBC63E600087E10 /* ThreeDS_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB42FBC63E600087E10 /* ThreeDS_SDK */; };
+		9C0FCEB72FBC63E600087E10 /* TwintSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB62FBC63E600087E10 /* TwintSDK */; };
+		9C0FCEB92FBC63E600087E10 /* WalleePaymentSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB82FBC63E600087E10 /* WalleePaymentSdk */; };
+		9C0FCEBB2FBC63E600087E10 /* hermes in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEBA2FBC63E600087E10 /* hermes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +79,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0FCEBB2FBC63E600087E10 /* hermes in Frameworks */,
+				9C0FCEB72FBC63E600087E10 /* TwintSDK in Frameworks */,
+				9C0FCEB92FBC63E600087E10 /* WalleePaymentSdk in Frameworks */,
+				9C0FCEB32FBC63E600087E10 /* ReactBrownfield in Frameworks */,
 				1E226F2D122E0D06CBFD5DDF /* Pods_walleeDemo.framework in Frameworks */,
+				9C0FCEB52FBC63E600087E10 /* ThreeDS_SDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +316,6 @@
 				790020F229AF649A00DCE75B /* Frameworks */,
 				790020F329AF649A00DCE75B /* Resources */,
 				F1F099CD79C41808A9308E78 /* [CP] Embed Pods Frameworks */,
-				293E1E7EA9C884CDF15C8961 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +350,9 @@
 				Base,
 			);
 			mainGroup = 790020EC29AF649A00DCE75B;
+			packageReferences = (
+				9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */,
+			);
 			productRefGroup = 790020F629AF649A00DCE75B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,23 +397,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		293E1E7EA9C884CDF15C8961 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F1F099CD79C41808A9308E78 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,9 +405,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-walleeDemo/Pods-walleeDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -594,7 +593,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Wallee.walleeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -632,7 +631,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Wallee.walleeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -667,6 +666,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-SPM";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C0FCEB22FBC63E600087E10 /* ReactBrownfield */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = ReactBrownfield;
+		};
+		9C0FCEB42FBC63E600087E10 /* ThreeDS_SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = ThreeDS_SDK;
+		};
+		9C0FCEB62FBC63E600087E10 /* TwintSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = TwintSDK;
+		};
+		9C0FCEB82FBC63E600087E10 /* WalleePaymentSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = WalleePaymentSdk;
+		};
+		9C0FCEBA2FBC63E600087E10 /* hermes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = hermes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 790020ED29AF649A00DCE75B /* Project object */;
 }

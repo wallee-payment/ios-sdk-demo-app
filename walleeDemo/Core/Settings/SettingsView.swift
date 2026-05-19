@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WalleePaymentSdk
 
 struct SettingsView: View {
     @Binding var path: NavigationPath
@@ -71,6 +72,8 @@ struct SettingsView: View {
                         }
                    
                     Spacer()
+                    Text("SDK Version: \(PaymentSdk.SDK_VERSION)").bold()
+
                     // Activate feature with relevant ticket
                     // Toggle("Dark Mode", isOn: $isDarkMode)
                     //     .padding().bold()
