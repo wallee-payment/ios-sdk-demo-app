@@ -29,11 +29,18 @@ struct walleeDemoApp: App {
             }
         }
     
+    init() {
+        let wallee = PaymentSdk.shared
+        wallee.initialize()
+        wallee.configureApplePay(merchantId: "merchant.wallee.demo.app")
+        wallee.configureDeepLink(deepLink: "awesome-example-test")
+    }
+    
     var body: some Scene {
         WindowGroup {
                 ContentView().environmentObject(CartManager()).environmentObject(LaunchViewManager())
                 .preferredColorScheme(selectedColorScheme).onOpenURL(perform: { url in
-                    let _ = WalleePaymentSdk.onHandleOpenURL(url: url)
+                    let _ = PaymentSdk.onHandleOpenURL(url: url)
                 })
         }
     }

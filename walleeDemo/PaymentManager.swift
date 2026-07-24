@@ -13,24 +13,29 @@ import AlertToast
 import SwiftUI
 import Alamofire
 
-class PaymentManager: ObservableObject, WalleePaymentResultObserver {
+class PaymentManager: ObservableObject, PaymentResultObserver {
     let baseUrl = "https://app-wallee.com"
     var spaceId = UserDefaults.standard.string(forKey: "spaceId") ?? ""
     var userId = UserDefaults.standard.string(forKey: "userId") ?? ""
     var userToken = UserDefaults.standard.string(forKey: "userToken") ?? ""
-    
+    var wallee = PaymentSdk.shared
+
     @Published var token: String = ""
     @Published var result: String = ""
     @Published var toast: Toast = Toast(shouldShow: false, type: .complete(Color.green), title: nil)
-    @Published var wallee: WalleePaymentSdk?
     
+    init() {
+        wallee.resultObserver(eventObserver: self)
+    }
 
     func paymentResult(paymentResultMessage: PaymentResult) {
-        self.toast = Toast(shouldShow: true, type: paymentResultMessage.code == .COMPLETED ? .complete(Color.green) : .error(Color.red), title: paymentResultMessage.code.rawValue)
-        self.result = paymentResultMessage.code.rawValue
-            
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.toast = Toast(shouldShow: false, type: .complete(Color.green))
+        DispatchQueue.main.async {
+            self.toast = Toast(shouldShow: true, type: paymentResultMessage.code == .COMPLETED ? .complete(Color.green) : .error(Color.red), title: paymentResultMessage.code.rawValue)
+            self.result = paymentResultMessage.code.rawValue
+                
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.toast = Toast(shouldShow: false, type: .complete(Color.green))
+            }
         }
     }
     
@@ -134,13 +139,9 @@ class PaymentManager: ObservableObject, WalleePaymentResultObserver {
     
 
     func onOpenSdkPress(cartProducts: [CartItem]){
-        wallee = WalleePaymentSdk(eventObserver: self)
-        guard let wallee = wallee else { return }
-        wallee.configureApplePay(merchantId: "merchant.wallee.demo.app")
-        wallee.configureDeepLink(deepLink: "twint-payment-w-demo-app")
         self.toast = Toast(shouldShow: true, type: .loading)
         createTransaction(cartProducts: cartProducts) {
-            wallee.launchPayment(token: self.token, isSwiftUI: true)
+            self.wallee.launchPayment(token: self.token, isSwiftUI: true, paymentMethodConfigurationId: nil)
         }
     }
 }

@@ -1,0 +1,15 @@
+{
+  "originHash" : "bf6b7edc149f8ce14a810a5b1dfeaa2cf77135aabc8d353f08798bb70edbfce2",
+  "pins" : [
+    {
+      "identity" : "ios-mobile-sdk-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wallee-payment/ios-mobile-sdk-spm",
+      "state" : {
+        "revision" : "23a60782a5d6caa0213e7a9568d184abaecfb612",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
