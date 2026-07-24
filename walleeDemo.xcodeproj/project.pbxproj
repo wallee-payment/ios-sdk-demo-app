@@ -33,11 +33,21 @@
 		79D488DA29C301E2004F2AE1 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D488D929C301E2004F2AE1 /* CartItem.swift */; };
 		79D74A102A308BA0004ED9D3 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F4C0972A27533A002BBD44 /* Transaction.swift */; };
 		79DBF1F329B1E77B003C8D0C /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBF1F229B1E77B003C8D0C /* ImageSliderView.swift */; };
-		9C0FCEB32FBC63E600087E10 /* ReactBrownfield in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB22FBC63E600087E10 /* ReactBrownfield */; };
-		9C0FCEB52FBC63E600087E10 /* ThreeDS_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB42FBC63E600087E10 /* ThreeDS_SDK */; };
-		9C0FCEB72FBC63E600087E10 /* TwintSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB62FBC63E600087E10 /* TwintSDK */; };
-		9C0FCEB92FBC63E600087E10 /* WalleePaymentSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEB82FBC63E600087E10 /* WalleePaymentSdk */; };
-		9C0FCEBB2FBC63E600087E10 /* hermes in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0FCEBA2FBC63E600087E10 /* hermes */; };
+		9C27323F30123B0B00821B07 /* ReactBrownfield in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27323E30123B0B00821B07 /* ReactBrownfield */; };
+		9C27324130123B0B00821B07 /* ThreeDS_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324030123B0B00821B07 /* ThreeDS_SDK */; };
+		9C27324330123B0B00821B07 /* TwintSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324230123B0B00821B07 /* TwintSDK */; };
+		9C27324530123B0B00821B07 /* WalleePaymentSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324430123B0B00821B07 /* WalleePaymentSdk */; };
+		9C27324730123B0B00821B07 /* hermes in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324630123B0B00821B07 /* hermes */; };
+		9C27324930123BE500821B07 /* ReactBrownfield in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324830123BE500821B07 /* ReactBrownfield */; };
+		9C27324B30123BE500821B07 /* ThreeDS_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324A30123BE500821B07 /* ThreeDS_SDK */; };
+		9C27324D30123BE500821B07 /* TwintSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324C30123BE500821B07 /* TwintSDK */; };
+		9C27324F30123BE500821B07 /* WalleePaymentSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27324E30123BE500821B07 /* WalleePaymentSdk */; };
+		9C27325130123BE500821B07 /* hermes in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27325030123BE500821B07 /* hermes */; };
+		9C273254301385F200821B07 /* ReactBrownfield in Frameworks */ = {isa = PBXBuildFile; productRef = 9C273253301385F200821B07 /* ReactBrownfield */; };
+		9C273256301385F200821B07 /* ThreeDS_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C273255301385F200821B07 /* ThreeDS_SDK */; };
+		9C273258301385F200821B07 /* TwintSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9C273257301385F200821B07 /* TwintSDK */; };
+		9C27325A301385F200821B07 /* WalleePaymentSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9C273259301385F200821B07 /* WalleePaymentSdk */; };
+		9C27325C301385F200821B07 /* hermes in Frameworks */ = {isa = PBXBuildFile; productRef = 9C27325B301385F200821B07 /* hermes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,12 +89,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C0FCEBB2FBC63E600087E10 /* hermes in Frameworks */,
-				9C0FCEB72FBC63E600087E10 /* TwintSDK in Frameworks */,
-				9C0FCEB92FBC63E600087E10 /* WalleePaymentSdk in Frameworks */,
-				9C0FCEB32FBC63E600087E10 /* ReactBrownfield in Frameworks */,
+				9C27324730123B0B00821B07 /* hermes in Frameworks */,
+				9C27324D30123BE500821B07 /* TwintSDK in Frameworks */,
+				9C273254301385F200821B07 /* ReactBrownfield in Frameworks */,
+				9C27324330123B0B00821B07 /* TwintSDK in Frameworks */,
+				9C27324530123B0B00821B07 /* WalleePaymentSdk in Frameworks */,
+				9C27324B30123BE500821B07 /* ThreeDS_SDK in Frameworks */,
+				9C273256301385F200821B07 /* ThreeDS_SDK in Frameworks */,
+				9C27323F30123B0B00821B07 /* ReactBrownfield in Frameworks */,
+				9C273258301385F200821B07 /* TwintSDK in Frameworks */,
+				9C27324F30123BE500821B07 /* WalleePaymentSdk in Frameworks */,
+				9C27325C301385F200821B07 /* hermes in Frameworks */,
 				1E226F2D122E0D06CBFD5DDF /* Pods_walleeDemo.framework in Frameworks */,
-				9C0FCEB52FBC63E600087E10 /* ThreeDS_SDK in Frameworks */,
+				9C27325A301385F200821B07 /* WalleePaymentSdk in Frameworks */,
+				9C27325130123BE500821B07 /* hermes in Frameworks */,
+				9C27324930123BE500821B07 /* ReactBrownfield in Frameworks */,
+				9C27324130123B0B00821B07 /* ThreeDS_SDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +371,7 @@
 			);
 			mainGroup = 790020EC29AF649A00DCE75B;
 			packageReferences = (
-				9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */,
+				9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */,
 			);
 			productRefGroup = 790020F629AF649A00DCE75B /* Products */;
 			projectDirPath = "";
@@ -575,8 +595,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = walleeDemo/walleeDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"walleeDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;
@@ -613,8 +634,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = walleeDemo/walleeDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"walleeDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 3PR83KKG59;
 				ENABLE_PREVIEWS = YES;
@@ -668,40 +690,98 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */ = {
+		9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-SPM";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.1;
+				minimumVersion = 2.0.3;
+			};
+		};
+		9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wallee-payment/ios-mobile-sdk-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9C0FCEB22FBC63E600087E10 /* ReactBrownfield */ = {
+		9C27323E30123B0B00821B07 /* ReactBrownfield */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
 			productName = ReactBrownfield;
 		};
-		9C0FCEB42FBC63E600087E10 /* ThreeDS_SDK */ = {
+		9C27324030123B0B00821B07 /* ThreeDS_SDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
 			productName = ThreeDS_SDK;
 		};
-		9C0FCEB62FBC63E600087E10 /* TwintSDK */ = {
+		9C27324230123B0B00821B07 /* TwintSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
 			productName = TwintSDK;
 		};
-		9C0FCEB82FBC63E600087E10 /* WalleePaymentSdk */ = {
+		9C27324430123B0B00821B07 /* WalleePaymentSdk */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
 			productName = WalleePaymentSdk;
 		};
-		9C0FCEBA2FBC63E600087E10 /* hermes */ = {
+		9C27324630123B0B00821B07 /* hermes */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C0FCEB12FBC63E600087E10 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = hermes;
+		};
+		9C27324830123BE500821B07 /* ReactBrownfield */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = ReactBrownfield;
+		};
+		9C27324A30123BE500821B07 /* ThreeDS_SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = ThreeDS_SDK;
+		};
+		9C27324C30123BE500821B07 /* TwintSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = TwintSDK;
+		};
+		9C27324E30123BE500821B07 /* WalleePaymentSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = WalleePaymentSdk;
+		};
+		9C27325030123BE500821B07 /* hermes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C27323D30123B0B00821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-SPM" */;
+			productName = hermes;
+		};
+		9C273253301385F200821B07 /* ReactBrownfield */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */;
+			productName = ReactBrownfield;
+		};
+		9C273255301385F200821B07 /* ThreeDS_SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */;
+			productName = ThreeDS_SDK;
+		};
+		9C273257301385F200821B07 /* TwintSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */;
+			productName = TwintSDK;
+		};
+		9C273259301385F200821B07 /* WalleePaymentSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */;
+			productName = WalleePaymentSdk;
+		};
+		9C27325B301385F200821B07 /* hermes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C273252301385F200821B07 /* XCRemoteSwiftPackageReference "ios-mobile-sdk-spm" */;
 			productName = hermes;
 		};
 /* End XCSwiftPackageProductDependency section */

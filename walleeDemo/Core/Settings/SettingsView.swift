@@ -73,6 +73,8 @@ struct SettingsView: View {
                    
                     Spacer()
                     Text("SDK Version: \(PaymentSdk.SDK_VERSION)").bold()
+                    Text("SDK Build Version: \(PaymentSdk.SDK_BUILD_VERSION)").bold()
+                    Text("SDK Dependencies Version: \(PaymentSdk.SDK_DEPENDENCIES_VERSION)").bold()
 
                     // Activate feature with relevant ticket
                     // Toggle("Dark Mode", isOn: $isDarkMode)

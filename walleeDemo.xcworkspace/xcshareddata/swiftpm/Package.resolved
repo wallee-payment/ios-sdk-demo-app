@@ -1,13 +1,13 @@
 {
-  "originHash" : "9282db9a38e444db41cee1bf2104221e0368f6d9b4e0f16485452d71440a49b6",
+  "originHash" : "bf6b7edc149f8ce14a810a5b1dfeaa2cf77135aabc8d353f08798bb70edbfce2",
   "pins" : [
     {
       "identity" : "ios-mobile-sdk-spm",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/WhiteLabelGithubOwnerName/ios-mobile-sdk-SPM",
+      "location" : "https://github.com/wallee-payment/ios-mobile-sdk-spm",
       "state" : {
-        "revision" : "3c136650bfbbd0e0c5f54363259b0ccdfd61418b",
-        "version" : "2.0.2"
+        "revision" : "23a60782a5d6caa0213e7a9568d184abaecfb612",
+        "version" : "2.0.0"
       }
     }
   ],
